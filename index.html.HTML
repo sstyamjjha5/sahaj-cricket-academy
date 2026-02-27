@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahaj Cricket Academy | Elite Coaching in Gurgaon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Outfit', sans-serif; }
+        
+        /* Modern Grid Texture Background - Updated to SCCA Red */
+        .bg-texture {
+            background-color: #020617;
+            background-image: 
+                radial-gradient(rgba(193, 49, 49, 0.1) 1px, transparent 1px),
+                radial-gradient(rgba(193, 49, 49, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+
+        /* Glassmorphism Panel */
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        /* Gradient Text - Updated to Red/Crimson */
+        .text-gradient {
+            background: linear-gradient(135deg, #EF4444 0%, #991B1B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Hero Image Overlay */
+        .hero-overlay {
+            /* Replace the URL below with your 1920x1080 background image */
+            background: linear-gradient(to right, #020617 20%, rgba(2, 6, 23, 0.4) 100%), 
+                        url('https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Glowing Accent - Updated to Red */
+        .glow-border:hover {
+            box-shadow: 0 0 20px rgba(239, 68, 68, 0.4);
+            border-color: #EF4444;
+            transition: all 0.3s ease;
+        }
+        
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-texture text-slate-300 antialiased overflow-x-hidden">
+
+    <nav class="fixed w-full z-50 glass-panel border-b-0 border-white/5">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            
+            <a href="#" class="flex items-center gap-3">
+                <img src="logo.png" alt="SCCA Logo" class="h-12 w-auto drop-shadow-lg">
+                <div class="text-2xl font-black text-white tracking-wider hidden sm:block">SAHAJ<span class="text-gradient">CRICKET</span></div>
+            </a>
+
+            <div class="hidden md:flex space-x-8 font-semibold text-sm tracking-wide text-slate-300">
+                <a href="#coach" class="hover:text-red-400 transition">THE COACH</a>
+                <a href="#trials" class="hover:text-red-400 transition">TRIAL DATES</a>
+                <a href="#fees" class="hover:text-red-400 transition">FEE STRUCTURE</a>
+            </div>
+            <a href="tel:+919873148229" class="hidden md:block bg-gradient-to-r from-red-600 to-red-800 text-white px-6 py-2 rounded-full font-bold hover:scale-105 transition transform shadow-[0_0_15px_rgba(220,38,38,0.3)]">
+                JOIN NOW
+            </a>
+        </div>
+    </nav>
+
+    <section class="hero-overlay min-h-screen flex items-center relative pt-20">
+        <div class="max-w-7xl mx-auto px-6 w-full relative z-10">
+            <div class="max-w-3xl">
+                <div class="inline-block px-4 py-1 rounded-full border border-red-500/30 bg-red-500/10 text-red-400 text-sm font-bold tracking-widest mb-6 backdrop-blur-sm">
+                    INTERNATIONAL EXCELLENCE
+                </div>
+                <h1 class="text-6xl md:text-8xl font-black text-white mb-6 leading-tight tracking-tighter">
+                    MASTER YOUR <br><span class="text-gradient">GAME.</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-10 text-slate-400 font-light max-w-2xl">
+                    Train under Cambodia International cricketer Sahaj Chadha. Transform raw talent into match-winning performance.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#trials" class="bg-white text-slate-900 px-8 py-4 rounded-lg text-lg font-bold text-center hover:bg-gray-200 transition">Book a Trial</a>
+                    <a href="#fees" class="glass-panel text-white px-8 py-4 rounded-lg text-lg font-bold text-center hover:bg-white/10 transition border border-white/20">View Fee Structure</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="trials" class="relative -mt-16 z-20 max-w-7xl mx-auto px-6">
+        <div class="bg-gradient-to-r from-red-950 to-slate-900 border border-red-500/30 rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between shadow-[0_0_30px_rgba(220,38,38,0.15)]">
+            <div>
+                <h3 class="text-2xl font-bold text-white mb-2"><i class="fas fa-calendar-check text-red-500 mr-3"></i>Upcoming Selection Trials</h3>
+                <p class="text-slate-400">Secure your spot for the next academy intake. Limited slots available per batch.</p>
+            </div>
+            <div class="mt-6 md:mt-0 flex gap-4">
+                <div class="glass-panel px-6 py-3 rounded-xl text-center">
+                    <span class="block text-sm text-red-400 font-bold uppercase">Next Trial</span>
+                    <span class="text-xl font-bold text-white">This Weekend</span>
+                </div>
+                <a href="https://wa.me/919873148229" class="bg-red-600 text-white font-bold px-6 py-3 rounded-xl hover:bg-red-500 transition flex items-center">Register Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="coach" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-red-600 to-orange-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                <div class="relative glass-panel rounded-2xl h-[500px] overflow-hidden border border-white/10 p-2">
+                    <img src="https://images.unsplash.com/photo-1540747913346-19e3adca174f?auto=format&fit=crop&q=80" alt="Coach Sahaj Chadha" class="w-full h-full object-cover rounded-xl filter grayscale hover:grayscale-0 transition duration-500">
+                </div>
+            </div>
+            <div>
+                <h2 class="text-5xl font-black text-white mb-6">THE <span class="text-gradient">EXPERIENCE</span></h2>
+                <p class="text-lg text-slate-400 mb-8 leading-relaxed font-light">With over <strong class="text-white">12,000+ runs</strong> and global exposure playing in the competitive circuits of England, South Africa, and internationally for Cambodia, Coach Sahaj brings a modern, aggressive, and highly tactical approach to coaching.</p>
+                
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="glass-panel p-6 rounded-xl border-l-4 border-red-500 glow-border">
+                        <i class="fas fa-brain text-2xl text-red-400 mb-3"></i>
+                        <h4 class="text-white font-bold text-lg mb-1">Mental Fortitude</h4>
+                        <p class="text-sm text-slate-400">Match-scenario pressure training.</p>
+                    </div>
+                    <div class="glass-panel p-6 rounded-xl border-l-4 border-orange-500 glow-border">
+                        <i class="fas fa-dumbbell text-2xl text-orange-400 mb-3"></i>
+                        <h4 class="text-white font-bold text-lg mb-1">Elite Fitness</h4>
+                        <p class="text-sm text-slate-400">Cricket-specific strength & conditioning.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="fees" class="py-24 relative">
+        <div class="absolute inset-0 bg-slate-900/50 backdrop-blur-md -z-10"></div>
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-5xl font-black text-white mb-4">PROGRAMS & <span class="text-gradient">FEE STRUCTURE</span></h2>
+            <p class="text-slate-400 mb-16 max-w-2xl mx-auto">Transparent pricing for premium coaching. Choose the tier that matches your dedication level.</p>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-panel p-8 rounded-2xl flex flex-col glow-border">
+                    <h3 class="text-2xl font-bold text-white mb-2">Development</h3>
+                    <p class="text-slate-400 mb-6 h-12">Perfect for young talents (U-12) starting their journey.</p>
+                    <div class="text-4xl font-black text-white mb-6">₹--- <span class="text-sm text-slate-500 font-normal">/month</span></div>
+                    <ul class="text-left space-y-4 mb-8 flex-grow">
+                        <li class="flex items-center text-slate-300"><i class="fas fa-check text-red-500 mr-3"></i>3 Days a week</li>
+                        <li class="flex items-center text-slate-300"><i class="fas fa-check text-red-500 mr-3"></i>Basic Net Sessions</li>
+                        <li class="flex items-center text-slate-300"><i class="fas fa-check text-red-500 mr-3"></i>Fitness Drills</li>
+                    </ul>
+                    <a href="https://wa.me/919873148229" class="w-full glass-panel py-3 rounded-lg text-white font-bold hover:bg-white/10 transition border border-white/20 text-center">Inquire Now</a>
+                </div>
+
+                <div class="glass-panel p-8 rounded-2xl flex flex-col relative transform md:-translate-y-4 border-red-500/50 shadow-[0_0_30px_rgba(220,38,38,0.2)]">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-red-600 to-red-800 text-white px-4 py-1 rounded-full text-xs font-bold tracking-widest">MOST POPULAR</div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Competitive</h3>
+                    <p class="text-slate-400 mb-6 h-12">For active league and school-level players.</p>
+                    <div class="text-4xl font-black text-red-400 mb-6">₹--- <span class="text-sm text-slate-500 font-normal">/month</span></div>
+                    <ul class="text-left space-y-4 mb-8 flex-grow">
+                        <li class="flex items-center text-slate-300"><i class="fas fa-check text-red-500 mr-3"></i>5 Days a week</li>
+                        <li class="flex items-center text-slate-300"><i class="fas fa-check text-red-500 mr-3"></i>Video Analysis</li>
+                        <li class="flex items-center text-slate-300"><i class="fas fa-check text-red-500 mr-3"></i>Match Simulations</li>
+                    </ul>
+                    <a href="https://wa.me/919873148229" class="w-full bg-red-600 text-white py-3 rounded-lg font-bold hover:bg-red-500 transition text-center">Inquire Now</a>
+                </div>
+
+                <div class="glass-panel p-8 rounded-2xl flex flex-col glow-border">
+                    <h3 class="text-2xl font-bold text-white mb-2">High Performance</h3>
+                    <p class="text-slate-400 mb-6 h-12">One-on-one sessions directly with Coach Sahaj.</p>
+                    <div class="text-4xl font-black text-white mb-6">Custom <span class="text-sm text-slate-500 font-normal">Pricing</span></div>
+                    <ul class="text-left space-y-4 mb-8 flex-grow">
+                        <li class="flex items-center text-slate-300"><i class="fas fa-check text-red-500 mr-3"></i>Personalized Roadmap</li>
+                        <li class="flex items-center text-slate-300"><i class="fas fa-check text-red-500 mr-3"></i>Advanced Biomechanics</li>
+                        <li class="flex items-center text-slate-300"><i class="fas fa-check text-red-500 mr-3"></i>Diet & Nutrition Plan</li>
+                    </ul>
+                    <a href="https://wa.me/919873148229" class="w-full glass-panel py-3 rounded-lg text-white font-bold hover:bg-white/10 transition border border-white/20 text-center">Inquire Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-white/10 bg-slate-950 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 mb-12">
+            <div>
+                <div class="flex items-center gap-3 mb-6">
+                    <img src="logo.png" alt="SCCA Logo" class="h-10 w-auto">
+                    <div class="text-3xl font-black text-white">SAHAJ<span class="text-gradient">CRICKET</span></div>
+                </div>
+                <p class="text-slate-400 mb-6 max-w-sm">Elevating the standard of cricket coaching in India with international techniques and professional standards.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 rounded-full glass-panel flex items-center justify-center text-white hover:text-red-400 transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full glass-panel flex items-center justify-center text-white hover:text-red-400 transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full glass-panel flex items-center justify-center text-white hover:text-red-400 transition"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="glass-panel p-8 rounded-2xl">
+                <h4 class="text-xl font-bold text-white mb-6">Contact Us</h4>
+                <div class="space-y-4 text-slate-300">
+                    <p><i class="fas fa-phone-alt w-8 text-red-400"></i> +91 9873148229</p>
+                    <p><i class="fas fa-envelope w-8 text-red-400"></i> sahajcricketacademy@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt w-8 text-red-400"></i> Gurgaon, Haryana, India</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-slate-500 text-sm">
+            &copy; 2026 Sahaj Chadha Cricket Academy. All rights reserved.
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919873148229" class="fixed bottom-6 right-6 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-[0_0_20px_rgba(37,211,102,0.4)] hover:scale-110 transition-transform z-50">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
