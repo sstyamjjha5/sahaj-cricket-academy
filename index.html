@@ -50,7 +50,6 @@
             transition: all 0.3s ease;
         }
         
-        /* Smooth scrolling for anchor links */
         html { scroll-behavior: smooth; }
     </style>
 </head>
@@ -58,7 +57,6 @@
 
     <nav class="fixed w-full z-50 bg-[#0F172A] border-b border-gray-800 shadow-xl transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 md:py-4 flex justify-between items-center">
-            
             <a href="#" class="flex items-center gap-3 sm:gap-4">
                 <img src="logo.svg" alt="SCCA Logo" class="h-16 sm:h-20 md:h-24 w-auto drop-shadow-xl flex-shrink-0">
                 <div class="text-xl sm:text-2xl md:text-3xl font-black text-white tracking-tighter leading-none uppercase">
@@ -66,14 +64,12 @@
                     <span class="text-[#e32a2a] tracking-widest text-[10px] sm:text-xs md:text-sm mt-1 block font-bold">CRICKET ACADEMY</span>
                 </div>
             </a>
-
             <div class="hidden lg:flex space-x-10 font-bold text-sm tracking-widest uppercase text-gray-300">
                 <a href="#coach" class="hover:text-white hover:border-b-2 border-[#e32a2a] pb-1 transition-all">THE COACH</a>
                 <a href="#fees" class="hover:text-white hover:border-b-2 border-[#e32a2a] pb-1 transition-all">PROGRAMS</a>
                 <a href="#testimonials" class="hover:text-white hover:border-b-2 border-[#e32a2a] pb-1 transition-all">REVIEWS</a>
                 <a href="#faq" class="hover:text-white hover:border-b-2 border-[#e32a2a] pb-1 transition-all">FAQ</a>
             </div>
-            
             <a href="https://docs.google.com/forms/d/e/1FAIpQLScDgYMrfEt_Fkpi06eeCEZb5tBn9srAnUOU8y9T_M8sD1K2gA/viewform" class="hidden sm:flex items-center gap-2 bg-[#e32a2a] text-white px-8 py-4 rounded-full font-bold hover:bg-red-700 transition transform hover:scale-105 shadow-[0_10px_25px_rgba(227,42,42,0.3)] whitespace-nowrap text-lg uppercase tracking-wider">
                 JOIN NOW <i class="fas fa-arrow-right"></i>
             </a>
@@ -81,45 +77,44 @@
     </nav>
 
     <main>
-        <section class="bg-white pt-28 pb-0 md:pt-48 md:pb-24 overflow-hidden relative border-b border-gray-100">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 items-center gap-8 md:gap-16">
+        <section class="bg-white pt-28 md:pt-40 overflow-hidden relative border-b-2 border-gray-100">
+            <div class="absolute top-0 right-0 w-full md:w-2/3 h-full bg-gradient-to-bl from-red-50 to-transparent -z-10 opacity-70"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-end justify-between">
                 
-                <div class="w-full relative z-10 text-center md:text-left pt-4 md:pt-0" data-aos="fade-right">
-                    <div class="inline-block px-3 py-1 sm:px-4 sm:py-1 rounded-full border border-red-500 bg-red-50 text-red-600 text-[10px] sm:text-xs font-bold tracking-widest mb-4 sm:mb-6 backdrop-blur-sm shadow-sm">
+                <div class="w-full md:w-[55%] relative z-20 text-center md:text-left pt-6 pb-8 md:pb-24" data-aos="fade-right">
+                    <div class="inline-block px-4 py-1 rounded-full border border-red-500 bg-red-50 text-red-600 text-xs sm:text-sm font-bold tracking-widest mb-6 backdrop-blur-sm shadow-sm">
                         INTERNATIONAL EXCELLENCE
                     </div>
                     
-                    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-[#111827] mb-4 sm:mb-6 leading-[1.05] tracking-tighter uppercase mx-auto md:mx-0">
+                    <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-black text-[#111827] mb-6 leading-[1.02] tracking-tighter uppercase mx-auto md:mx-0">
                         SAHAJ CHADHA <br><span class="text-gradient">CRICKET ACADEMY</span>
                     </h1>
                     
-                    <p class="text-base sm:text-xl md:text-2xl lg:text-3xl mb-8 sm:mb-10 text-[#0F172A] font-medium leading-relaxed max-w-xl mx-auto md:mx-0 px-2 sm:px-0">
+                    <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-8 md:mb-12 text-[#0F172A] font-medium leading-relaxed max-w-xl mx-auto md:mx-0">
                         Train under International Cricketer Sahaj Chadha in Noida. Transform raw talent into match-winning performance.
                     </p>
                     
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pb-6 md:pb-0 w-full px-4 sm:px-0">
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start w-full px-4 sm:px-0">
                         <a href="https://docs.google.com/forms/d/e/1FAIpQLScDgYMrfEt_Fkpi06eeCEZb5tBn9srAnUOU8y9T_M8sD1K2gA/viewform" 
-                           class="w-full sm:w-auto bg-[#e32a2a] text-white px-8 py-4 sm:px-12 sm:py-5 rounded-full text-lg sm:text-xl font-extrabold text-center hover:bg-red-700 transition transform hover:scale-105 shadow-[0_15px_30px_rgba(227,42,42,0.3)] whitespace-nowrap">
+                           class="w-full sm:w-auto bg-[#e32a2a] text-white px-10 py-5 rounded-full text-xl font-extrabold text-center hover:bg-red-700 transition transform hover:scale-105 shadow-[0_15px_30px_rgba(227,42,42,0.3)] whitespace-nowrap">
                             JOIN NOW
                         </a>
-                        <a href="#fees" class="w-full sm:w-auto bg-white text-slate-800 px-8 py-4 sm:px-10 sm:py-5 rounded-full text-lg sm:text-xl font-bold text-center hover:bg-gray-50 transition border-2 border-gray-200 shadow-sm">
+                        <a href="#fees" class="w-full sm:w-auto bg-white text-slate-800 px-10 py-5 rounded-full text-xl font-bold text-center hover:bg-gray-50 transition border-2 border-gray-200 shadow-sm">
                             View Fee Structure
                         </a>
                     </div>
                 </div>
 
-                <div class="w-full flex justify-center md:justify-end relative mt-2 md:mt-0" data-aos="fade-left">
-                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-gradient-to-tr from-red-100 to-transparent rounded-full blur-3xl -z-10"></div>
-                    
-                    <img src="scca-hero-image.png" alt="Coach Sahaj Chadha" class="w-full max-w-[260px] sm:max-w-[320px] md:max-w-[550px] lg:max-w-[650px] object-contain drop-shadow-2xl relative z-10 transform lg:scale-110 lg:translate-x-4 xl:translate-x-8 origin-bottom -mb-2 md:mb-0">
+                <div class="w-full md:w-[45%] relative z-10 flex justify-center md:justify-end items-end" data-aos="fade-left">
+                    <img src="scca-hero-image.png" alt="Coach Sahaj Chadha" class="w-[90%] sm:w-[75%] md:w-[120%] lg:w-[135%] max-w-none object-contain object-bottom drop-shadow-2xl origin-bottom relative md:-right-8 lg:-right-16">
                 </div>
                 
             </div>
         </section>
 
-        <section id="trials" class="relative -mt-12 md:-mt-16 z-20 max-w-7xl mx-auto px-4 sm:px-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="bg-white border border-gray-100 rounded-3xl p-6 sm:p-10 flex flex-col md:flex-row items-center justify-between shadow-[0_8px_30px_rgba(0,0,0,0.06)]">
-                
+        <section id="trials" class="relative -mt-8 md:-mt-12 z-20 max-w-7xl mx-auto px-4 sm:px-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="bg-white border border-gray-100 rounded-3xl p-6 sm:p-10 flex flex-col md:flex-row items-center justify-between shadow-[0_8px_30px_rgba(0,0,0,0.08)]">
                 <div class="w-full text-center md:text-left mb-6 md:mb-0 flex items-start justify-center md:justify-start gap-4">
                     <i class="fas fa-calendar-check text-[#e32a2a] text-3xl mt-1 hidden sm:block"></i>
                     <div>
@@ -129,13 +124,11 @@
                         <p class="text-slate-500 text-base sm:text-lg font-medium">Secure your spot for academy intake. Limited slots available per batch.</p>
                     </div>
                 </div>
-                
                 <div class="flex flex-row items-stretch gap-3 sm:gap-4 justify-center flex-shrink-0">
                     <div class="bg-white border border-gray-200 px-6 py-3 rounded-2xl text-center flex flex-col justify-center min-w-[130px] sm:min-w-[150px]">
                         <span class="block text-xs sm:text-sm text-[#e32a2a] font-bold uppercase tracking-wider mb-1 leading-tight">Next<br>Trial</span>
                         <span class="block text-lg sm:text-xl font-black text-slate-900 leading-tight">Enquire<br>Now</span>
                     </div>
-                    
                     <a href="https://wa.me/919873148229" class="bg-[#e32a2a] text-white font-bold px-6 py-3 rounded-2xl hover:bg-red-700 transition flex flex-col items-center justify-center min-w-[130px] sm:min-w-[150px] text-center shadow-lg shadow-red-500/30">
                         <span class="block text-lg sm:text-xl leading-tight">Register<br>Now</span>
                     </a>
@@ -145,18 +138,15 @@
 
         <section id="coach" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 overflow-hidden">
             <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-                
                 <div class="relative group mx-auto w-full max-w-md md:max-w-full" data-aos="fade-right">
                     <div class="absolute -inset-2 sm:-inset-4 bg-gradient-to-r from-red-200 to-orange-200 rounded-[2rem] blur-xl opacity-70"></div>
                     <div class="relative bg-white p-2 sm:p-3 rounded-3xl shadow-xl">
                         <img src="coach.jpg" alt="Coach Sahaj Chadha with Trophy" class="w-full h-auto rounded-2xl object-cover">
                     </div>
                 </div>
-                
                 <div data-aos="fade-left">
                     <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">THE <span class="text-[#e32a2a]">EXPERIENCE</span></h2>
                     <p class="text-base md:text-lg text-slate-500 mb-10 leading-relaxed font-medium">With over <strong class="text-slate-900 font-bold">12,000+ runs</strong> and global exposure playing in the competitive circuits of England, South Africa, and internationally for Cambodia, Coach Sahaj brings a modern, aggressive, and highly tactical approach to coaching.</p>
-                    
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                         <div class="bg-white p-6 sm:p-8 rounded-2xl border-2 border-red-400 hover:shadow-lg transition duration-300">
                             <i class="fas fa-brain text-3xl text-[#e32a2a] mb-4"></i>
@@ -177,12 +167,10 @@
             <div class="absolute inset-0 bg-white/50 backdrop-blur-md -z-10"></div>
             <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
                 <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-4 leading-tight" data-aos="fade-up">PROGRAMS & <span class="text-gradient">FEES</span></h2>
-                
                 <div class="inline-block bg-gradient-to-r from-red-50 to-white border border-red-200 text-slate-800 px-6 sm:px-10 py-3 sm:py-4 rounded-xl font-semibold mb-10 md:mb-14 shadow-sm" data-aos="fade-up" data-aos-delay="100">
                     <i class="fas fa-info-circle text-red-500 mr-2"></i> 
                     A one-time registration fee of <strong class="text-red-600">INR 1500/-</strong> applies to all new admissions.
                 </div>
-                
                 <div class="grid grid-cols-2 gap-3 sm:gap-6 lg:gap-8 max-w-5xl mx-auto">
                     
                     <div class="glass-panel p-4 sm:p-8 rounded-2xl flex flex-col glow-border bg-white text-left" data-aos="fade-up" data-aos-delay="200">
@@ -233,7 +221,6 @@
                         </ul>
                         <a href="https://wa.me/919873148229" class="w-full bg-slate-100 py-2 sm:py-3 rounded-lg text-slate-800 text-sm sm:text-base font-bold hover:bg-slate-200 transition border border-gray-200 text-center">Inquire</a>
                     </div>
-                    
                 </div>
             </div>
         </section>
@@ -243,7 +230,6 @@
                 <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-4 leading-tight">HEAR FROM OUR <span class="text-gradient">PLAYERS</span></h2>
                 <p class="text-slate-600 font-medium leading-relaxed max-w-2xl mx-auto">Real results from parents and students who have transformed their game at Sahaj Chadha Cricket Academy.</p>
             </div>
-            
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                 <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden group cursor-pointer hover:-translate-y-2 transition duration-300" data-aos="zoom-in" data-aos-delay="100">
                     <div class="relative h-48 sm:h-56 bg-slate-800">
@@ -259,7 +245,6 @@
                         <span class="text-xs text-slate-500 font-medium uppercase tracking-wide">U-16 Player</span>
                     </div>
                 </div>
-
                 <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden group cursor-pointer hover:-translate-y-2 transition duration-300" data-aos="zoom-in" data-aos-delay="200">
                     <div class="relative h-48 sm:h-56 bg-slate-800">
                         <img src="https://images.unsplash.com/photo-1540747913346-19e3adca174f?auto=format&fit=crop&q=80" alt="Cricket Nets" class="w-full h-full object-cover opacity-70 group-hover:opacity-50 transition">
@@ -274,7 +259,6 @@
                         <span class="text-xs text-slate-500 font-medium uppercase tracking-wide">Parent</span>
                     </div>
                 </div>
-
                 <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden group cursor-pointer hover:-translate-y-2 transition duration-300" data-aos="zoom-in" data-aos-delay="300">
                     <div class="relative h-48 sm:h-56 bg-slate-800">
                         <img src="https://images.unsplash.com/photo-1587280501635-a197001572d4?auto=format&fit=crop&q=80" alt="Fitness Training" class="w-full h-full object-cover opacity-70 group-hover:opacity-50 transition">
@@ -295,13 +279,11 @@
         <section class="py-12 md:py-16 max-w-7xl mx-auto px-4 sm:px-6">
             <div class="bg-gradient-to-r from-red-600 to-red-800 rounded-3xl p-8 md:p-14 flex flex-col md:flex-row items-center justify-between shadow-2xl relative overflow-hidden" data-aos="fade-up">
                 <i class="fas fa-dumbbell absolute -right-10 -top-10 text-9xl text-white opacity-10 transform rotate-12"></i>
-                
                 <div class="relative z-10 mb-8 md:mb-0 text-center md:text-left">
                     <div class="inline-block px-3 py-1 bg-red-900/50 text-red-100 text-[10px] sm:text-xs font-bold uppercase tracking-widest rounded-full mb-3 border border-red-500/30">Available Worldwide</div>
                     <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-3 md:mb-4 leading-tight">Train from Anywhere</h2>
                     <p class="text-red-100 text-base md:text-lg lg:text-xl font-medium max-w-xl leading-relaxed">Online Coaching & High-Performance Fitness Classes are now available. Get elite guidance directly on your screen.</p>
                 </div>
-                
                 <div class="relative z-10 w-full md:w-auto">
                     <a href="https://wa.me/919873148229" class="group bg-white text-slate-900 font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:bg-slate-50 transition shadow-[0_10px_25px_rgba(0,0,0,0.15)] whitespace-nowrap text-base sm:text-lg flex items-center justify-center gap-3 w-full">
                         <i class="fab fa-whatsapp text-2xl sm:text-3xl text-[#25D366] group-hover:scale-110 transition-transform"></i> Contact Us
@@ -312,7 +294,6 @@
 
         <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6">
             <div class="bg-slate-900 rounded-3xl p-8 md:p-14 flex flex-col md:flex-row items-center justify-between shadow-xl relative overflow-hidden" data-aos="zoom-in">
-                
                 <div class="relative z-10 mb-6 md:mb-0 text-center md:text-left flex flex-col md:flex-row gap-6 md:gap-8 items-center w-full">
                     <div class="w-20 h-20 sm:w-24 sm:h-24 bg-red-600 rounded-full flex items-center justify-center flex-shrink-0 shadow-[0_0_30px_rgba(220,38,38,0.4)] shadow-red-500/50 animate-pulse">
                         <i class="fab fa-youtube text-white text-4xl sm:text-5xl"></i>
@@ -322,7 +303,6 @@
                         <p class="text-slate-400 text-sm sm:text-base font-medium max-w-xl leading-relaxed">Subscribe to our YouTube channel for exclusive batting masterclasses, fitness routines, and behind-the-scenes academy footage.</p>
                     </div>
                 </div>
-                
                 <div class="relative z-10 w-full md:w-auto mt-6 md:mt-0">
                     <a href="https://www.youtube.com/@sahajchadhacricketacademy" target="_blank" class="bg-red-600 text-white font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:bg-red-700 transition shadow-lg whitespace-nowrap text-base sm:text-lg flex items-center justify-center gap-3 w-full border border-red-500">
                         Subscribe Now
@@ -336,18 +316,15 @@
                 <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4 leading-tight">FREQUENTLY ASKED <span class="text-gradient">QUESTIONS</span></h2>
                 <p class="text-slate-600 font-medium leading-relaxed">Everything you need to know about joining SCCA.</p>
             </div>
-
             <div class="space-y-6">
                 <article class="bg-white border border-gray-200 p-6 rounded-2xl shadow-sm" data-aos="fade-up" data-aos-delay="100">
                     <h3 class="font-bold text-slate-900 text-lg mb-2 leading-tight">What age groups do you coach at the academy?</h3>
                     <p class="text-slate-600 text-sm sm:text-base leading-relaxed">We cater to all age groups. Our Development program starts at U-12 (Under 12 years), while our Competitive and High-Performance programs are designed for active league players of all ages up to senior levels.</p>
                 </article>
-
                 <article class="bg-white border border-gray-200 p-6 rounded-2xl shadow-sm" data-aos="fade-up" data-aos-delay="200">
                     <h3 class="font-bold text-slate-900 text-lg mb-2 leading-tight">Where is Sahaj Chadha Cricket Academy located?</h3>
                     <p class="text-slate-600 text-sm sm:text-base leading-relaxed">We are primarily located in Noida, U.P., India. For exact ground locations and net practice venues, please reach out via WhatsApp or phone to book your initial trial.</p>
                 </article>
-
                 <article class="bg-white border border-gray-200 p-6 rounded-2xl shadow-sm" data-aos="fade-up" data-aos-delay="300">
                     <h3 class="font-bold text-slate-900 text-lg mb-2 leading-tight">Do you offer personal 1-on-1 coaching?</h3>
                     <p class="text-slate-600 text-sm sm:text-base leading-relaxed">Yes. Our 'Personal Training' and 'High Performance' tiers are exclusively dedicated to one-on-one sessions. This includes video analysis, personalized diet plans, and advanced biomechanics correction directly with Coach Sahaj.</p>
@@ -360,7 +337,6 @@
     <footer class="bg-[#0F172A] pt-16 pb-8 border-t-[6px] border-[#e32a2a]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="grid md:grid-cols-12 gap-10 md:gap-12 mb-12 border-b border-gray-800 pb-12">
-                
                 <div class="md:col-span-5">
                     <div class="flex items-center gap-4 mb-6">
                         <img src="logo.svg" alt="SCCA Logo" class="h-16 md:h-20 w-auto flex-shrink-0">
@@ -378,7 +354,6 @@
                         <a href="https://www.youtube.com/@sahajchadhacricketacademy" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-[#e32a2a] transition"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                
                 <div class="md:col-span-3">
                     <h4 class="text-lg font-bold text-white mb-6 uppercase tracking-wider">Explore</h4>
                     <ul class="space-y-3 text-gray-400 font-medium text-sm">
@@ -388,7 +363,6 @@
                         <li><a href="#faq" class="hover:text-[#e32a2a] transition">FAQS</a></li>
                     </ul>
                 </div>
-
                 <div class="md:col-span-4">
                     <h4 class="text-lg font-bold text-white mb-6 uppercase tracking-wider">Contact Us</h4>
                     <div class="space-y-4 text-gray-400 font-medium text-sm">
@@ -406,9 +380,7 @@
                         </p>
                     </div>
                 </div>
-
             </div>
-            
             <div class="flex flex-col md:flex-row justify-between items-center text-gray-500 text-xs font-medium">
                 <p>© 2026 Sahaj Chadha Cricket Academy. All rights reserved.</p>
                 <p class="mt-2 md:mt-0 uppercase tracking-widest text-[#e32a2a]">Designed for High Performance</p>
