@@ -50,6 +50,7 @@
             transition: all 0.3s ease;
         }
         
+        /* Smooth scrolling for anchor links */
         html { scroll-behavior: smooth; }
     </style>
 </head>
@@ -57,6 +58,7 @@
 
     <nav class="fixed w-full z-50 bg-[#0F172A] border-b border-gray-800 shadow-xl transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 md:py-4 flex justify-between items-center">
+            
             <a href="#" class="flex items-center gap-3 sm:gap-4">
                 <img src="logo.svg" alt="SCCA Logo" class="h-16 sm:h-20 md:h-24 w-auto drop-shadow-xl flex-shrink-0">
                 <div class="text-xl sm:text-2xl md:text-3xl font-black text-white tracking-tighter leading-none uppercase">
@@ -64,12 +66,14 @@
                     <span class="text-[#e32a2a] tracking-widest text-[10px] sm:text-xs md:text-sm mt-1 block font-bold">CRICKET ACADEMY</span>
                 </div>
             </a>
+
             <div class="hidden lg:flex space-x-10 font-bold text-sm tracking-widest uppercase text-gray-300">
                 <a href="#coach" class="hover:text-white hover:border-b-2 border-[#e32a2a] pb-1 transition-all">THE COACH</a>
                 <a href="#fees" class="hover:text-white hover:border-b-2 border-[#e32a2a] pb-1 transition-all">PROGRAMS</a>
                 <a href="#testimonials" class="hover:text-white hover:border-b-2 border-[#e32a2a] pb-1 transition-all">REVIEWS</a>
                 <a href="#faq" class="hover:text-white hover:border-b-2 border-[#e32a2a] pb-1 transition-all">FAQ</a>
             </div>
+            
             <a href="https://docs.google.com/forms/d/e/1FAIpQLScDgYMrfEt_Fkpi06eeCEZb5tBn9srAnUOU8y9T_M8sD1K2gA/viewform" class="hidden sm:flex items-center gap-2 bg-[#e32a2a] text-white px-8 py-4 rounded-full font-bold hover:bg-red-700 transition transform hover:scale-105 shadow-[0_10px_25px_rgba(227,42,42,0.3)] whitespace-nowrap text-lg uppercase tracking-wider">
                 JOIN NOW <i class="fas fa-arrow-right"></i>
             </a>
@@ -82,12 +86,12 @@
             
             <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-end justify-between">
                 
-                <div class="w-full md:w-[55%] relative z-20 text-center md:text-left pt-6 pb-8 md:pb-24" data-aos="fade-right">
+                <div class="w-full md:w-[55%] relative z-20 text-center md:text-left pt-6 pb-0 md:pb-24" data-aos="fade-right">
                     <div class="inline-block px-4 py-1 rounded-full border border-red-500 bg-red-50 text-red-600 text-xs sm:text-sm font-bold tracking-widest mb-6 backdrop-blur-sm shadow-sm">
                         INTERNATIONAL EXCELLENCE
                     </div>
                     
-                    <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-black text-[#111827] mb-6 leading-[1.02] tracking-tighter uppercase mx-auto md:mx-0">
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] font-black text-[#111827] mb-6 leading-[1.02] tracking-tighter uppercase mx-auto md:mx-0">
                         SAHAJ CHADHA <br><span class="text-gradient">CRICKET ACADEMY</span>
                     </h1>
                     
@@ -95,19 +99,20 @@
                         Train under International Cricketer Sahaj Chadha in Noida. Transform raw talent into match-winning performance.
                     </p>
                     
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start w-full px-4 sm:px-0">
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start w-full px-2 sm:px-0 pb-8 md:pb-0">
                         <a href="https://docs.google.com/forms/d/e/1FAIpQLScDgYMrfEt_Fkpi06eeCEZb5tBn9srAnUOU8y9T_M8sD1K2gA/viewform" 
-                           class="w-full sm:w-auto bg-[#e32a2a] text-white px-10 py-5 rounded-full text-xl font-extrabold text-center hover:bg-red-700 transition transform hover:scale-105 shadow-[0_15px_30px_rgba(227,42,42,0.3)] whitespace-nowrap">
+                           class="w-full sm:w-auto bg-[#e32a2a] text-white px-10 py-4 sm:py-5 rounded-full text-lg sm:text-xl font-extrabold text-center hover:bg-red-700 transition transform hover:scale-105 shadow-[0_15px_30px_rgba(227,42,42,0.3)] whitespace-nowrap">
                             JOIN NOW
                         </a>
-                        <a href="#fees" class="w-full sm:w-auto bg-white text-slate-800 px-10 py-5 rounded-full text-xl font-bold text-center hover:bg-gray-50 transition border-2 border-gray-200 shadow-sm">
+                        <a href="#fees" class="w-full sm:w-auto bg-white text-slate-800 px-10 py-4 sm:py-5 rounded-full text-lg sm:text-xl font-bold text-center hover:bg-gray-50 transition border-2 border-gray-200 shadow-sm">
                             View Fee Structure
                         </a>
                     </div>
                 </div>
 
                 <div class="w-full md:w-[45%] relative z-10 flex justify-center md:justify-end items-end" data-aos="fade-left">
-                    <img src="scca-hero-image.png" alt="Coach Sahaj Chadha" class="w-[90%] sm:w-[75%] md:w-[120%] lg:w-[135%] max-w-none object-contain object-bottom drop-shadow-2xl origin-bottom relative md:-right-8 lg:-right-16">
+                    <img src="scca-hero-image.png" alt="Coach Sahaj Chadha" 
+                         class="w-[85%] sm:w-[70%] md:w-full max-w-[350px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[650px] xl:max-w-[750px] object-contain object-bottom drop-shadow-[0_20px_35px_rgba(0,0,0,0.25)] origin-bottom relative md:-right-4 lg:-right-12 xl:-right-16 -mb-1 mt-4 md:mt-0">
                 </div>
                 
             </div>
