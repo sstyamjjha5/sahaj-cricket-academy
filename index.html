@@ -11,372 +11,505 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
     
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="logo.svg">
     
     <style>
-        body { font-family: 'Outfit', sans-serif; }
-        
-        .bg-texture {
-            background-color: #f8fafc;
-            background-image: 
-                radial-gradient(rgba(193, 49, 49, 0.15) 1px, transparent 1px),
-                radial-gradient(rgba(193, 49, 49, 0.05) 1px, transparent 1px);
-            background-size: 40px 40px;
-            background-position: 0 0, 20px 20px;
+        :root {
+            --crimson: #d53737;
+            --maroon-dark: #310909;
+            --dark-charcoal: #0f172a;
+            --crimson-glow: rgba(213, 55, 55, 0.28);
+            --glass-bg: rgba(255, 255, 255, 0.75);
+            --glass-border: rgba(49, 9, 9, 0.08);
+            --glass-border-hover: rgba(213, 55, 55, 0.45);
         }
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #ffffff;
+            color: var(--dark-charcoal);
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(rgba(213, 55, 55, 0.1) 1px, transparent 1px),
+                radial-gradient(rgba(49, 9, 9, 0.05) 1px, transparent 1px);
+            background-size: 32px 32px;
+            background-position: 0 0, 16px 16px;
+        }
+
+        /* Modern Display Font for Headings */
+        h1, h2, h3, .font-heading {
+            font-family: 'Syne', sans-serif;
+            letter-spacing: -0.03em;
+        }
+
+        /* Ambient Glow Meshes */
+        .ambient-glow {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(140px);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .glow-top {
+            top: -15%;
+            left: 15%;
+            width: 55vw;
+            height: 55vw;
+            background: radial-gradient(circle, rgba(213, 55, 55, 0.12) 0%, transparent 70%);
+        }
+        .glow-bottom {
+            bottom: 5%;
+            right: -5%;
+            width: 55vw;
+            height: 55vw;
+            background: radial-gradient(circle, rgba(49, 9, 9, 0.08) 0%, transparent 70%);
+        }
+
+        /* Interactive Cursor Glow */
+        .cursor-glow {
+            position: fixed;
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(213, 55, 55, 0.1), transparent 70%);
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            transition: transform 0.12s ease-out;
+            will-change: left, top;
+        }
+
+        /* Glassmorphism Panels */
         .glass-panel {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
+            background: var(--glass-bg);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 32px 0 rgba(49, 9, 9, 0.05);
+        }
+
+        .glass-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(254, 242, 242, 0.55) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            transform-style: preserve-3d;
+            transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.2s ease-out;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(49, 9, 9, 0.03);
+        }
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 1.5px;
+            background: linear-gradient(90deg, transparent, rgba(213, 55, 55, 0.4), transparent);
+        }
+        .glass-card:hover {
+            border-color: var(--glass-border-hover);
+            box-shadow: 0 16px 40px rgba(213, 55, 55, 0.15);
         }
 
         .text-gradient {
-            background: linear-gradient(135deg, #EF4444 0%, #991B1B 100%);
+            background: linear-gradient(135deg, #310909 15%, #d53737 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .hero-overlay {
-            background: linear-gradient(to right, rgba(248, 250, 252, 0.95) 30%, rgba(248, 250, 252, 0.4) 100%), 
-                        url('https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&q=80');
-            background-size: cover;
-            background-position: center;
+        /* Minimalist Clean Gradient Hero */
+        .hero-clean {
+            background: radial-gradient(circle at 80% 20%, rgba(213, 55, 55, 0.08) 0%, transparent 60%),
+                        radial-gradient(circle at 10% 80%, rgba(49, 9, 9, 0.05) 0%, transparent 50%),
+                        #ffffff;
         }
 
-        .glow-border:hover {
-            box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
-            border-color: #EF4444;
+        /* Scroll Reveals */
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .cta-crimson {
+            background: linear-gradient(135deg, #d53737 0%, #310909 100%);
+            color: #ffffff;
             transition: all 0.3s ease;
         }
-        
-        /* Smooth scrolling for anchor links */
-        html { scroll-behavior: smooth; }
+        .cta-crimson:hover {
+            box-shadow: 0 0 25px var(--crimson-glow);
+            transform: translateY(-2px);
+        }
+
+        /* Social Brand Colors */
+        .social-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: #ffffff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .social-btn:hover {
+            transform: translateY(-3px) scale(1.08);
+        }
+        .social-instagram {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            box-shadow: 0 4px 15px rgba(214, 36, 159, 0.35);
+        }
+        .social-facebook {
+            background-color: #1877F2;
+            box-shadow: 0 4px 15px rgba(24, 119, 242, 0.35);
+        }
+        .social-youtube {
+            background-color: #FF0000;
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.35);
+        }
     </style>
 </head>
-<body class="bg-texture text-slate-700 antialiased overflow-x-hidden">
+<body class="antialiased selection:bg-[#d53737] selection:text-white">
 
-    <nav class="fixed w-full z-50 glass-panel border-b-0 border-black/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
-            
+    <div class="ambient-glow glow-top"></div>
+    <div class="ambient-glow glow-bottom"></div>
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <nav class="fixed w-full z-50 glass-panel border-b border-black/5 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center relative z-10">
             <a href="#" class="flex items-center gap-3 sm:gap-4">
-                <img src="logo.svg" alt="SCCA Logo" class="h-12 sm:h-16 md:h-20 w-auto drop-shadow-md flex-shrink-0">
-                <div class="text-xl sm:text-3xl md:text-4xl font-black text-slate-900 tracking-wider leading-none">
-                    SAHAJ CHADHA<span class="text-gradient block text-base sm:text-xl md:text-2xl mt-0 sm:-mt-1 md:-mt-2">CRICKET ACADEMY</span>
+                <img src="logo.svg" alt="SCCA Logo" class="h-10 sm:h-16 md:h-20 w-auto drop-shadow-sm flex-shrink-0">
+                <div class="text-xs sm:text-xl md:text-2xl font-black text-[#310909] tracking-wider leading-tight font-heading">
+                    SAHAJ CHADHA<br><span class="text-gradient text-[10px] sm:text-lg md:text-xl">CRICKET ACADEMY</span>
                 </div>
             </a>
 
-            <div class="hidden lg:flex space-x-8 font-semibold text-sm tracking-wide text-slate-700">
-                <a href="#coach" class="hover:text-red-600 transition">THE COACH</a>
-                <a href="#fees" class="hover:text-red-600 transition">PROGRAMS</a>
-                <a href="#testimonials" class="hover:text-red-600 transition">REVIEWS</a>
-                <a href="#faq" class="hover:text-red-600 transition">FAQ</a>
+            <div class="hidden lg:flex space-x-8 font-semibold text-sm tracking-wide text-[#310909]/80">
+                <a href="#coach" class="hover:text-[#d53737] transition">THE COACH</a>
+                <a href="#fees" class="hover:text-[#d53737] transition">PROGRAMS</a>
+                <a href="#testimonials" class="hover:text-[#d53737] transition">REVIEWS</a>
+                <a href="#faq" class="hover:text-[#d53737] transition">FAQ</a>
             </div>
             
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScDgYMrfEt_Fkpi06eeCEZb5tBn9srAnUOU8y9T_M8sD1K2gA/viewform" class="hidden sm:block bg-gradient-to-r from-red-600 to-red-800 text-white px-4 sm:px-6 py-2 rounded-full font-bold hover:scale-105 transition transform shadow-[0_0_15px_rgba(220,38,38,0.3)] text-sm">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScDgYMrfEt_Fkpi06eeCEZb5tBn9srAnUOU8y9T_M8sD1K2gA/viewform" class="cta-crimson px-4 sm:px-6 py-2 sm:py-2.5 rounded-full font-bold text-xs sm:text-sm shadow-md flex items-center justify-center whitespace-nowrap">
                 JOIN NOW
             </a>
         </div>
     </nav>
 
-    <main>
-        <section class="hero-overlay min-h-[90vh] md:min-h-screen flex items-center relative pt-24 md:pt-20">
+    <main class="relative z-10">
+        <section class="hero-clean min-h-[85vh] md:min-h-screen flex items-center relative pt-28 md:pt-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 w-full relative z-10">
-                <div class="max-w-3xl" data-aos="fade-up">
-                    <div class="inline-block px-4 py-1 rounded-full border border-red-500 bg-red-50 text-red-600 text-xs sm:text-sm font-bold tracking-widest mb-6 backdrop-blur-sm">
+                <div class="max-w-3xl">
+                    <div class="reveal inline-block px-4 py-1.5 rounded-full border border-[#d53737]/30 bg-red-50 text-[#d53737] text-xs sm:text-sm font-bold tracking-widest mb-6 backdrop-blur-md uppercase">
                         INTERNATIONAL EXCELLENCE
                     </div>
-                    <h1 class="text-5xl sm:text-6xl md:text-8xl font-black text-slate-900 mb-6 leading-[1.1] tracking-tighter">
+                    <h1 class="reveal text-5xl sm:text-7xl md:text-8xl font-black text-[#310909] mb-6 leading-[1.02] tracking-tighter">
                         MASTER YOUR <br><span class="text-gradient">GAME.</span>
                     </h1>
-                    <p class="text-lg sm:text-xl md:text-2xl mb-8 md:mb-10 text-slate-600 font-medium max-w-2xl leading-relaxed">
+                    <p class="reveal text-base sm:text-xl md:text-2xl mb-8 md:mb-10 text-[#310909]/80 font-normal max-w-2xl leading-relaxed">
                         Train under Cambodia International cricketer Sahaj Chadha in Noida. Transform raw talent into match-winning performance.
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScDgYMrfEt_Fkpi06eeCEZb5tBn9srAnUOU8y9T_M8sD1K2gA/viewform" class="bg-red-700 text-white px-8 py-4 rounded-lg text-lg font-bold text-center hover:bg-red-800 transition shadow-lg">Get Started Today</a>
-                        <a href="#fees" class="glass-panel text-slate-800 px-8 py-4 rounded-lg text-lg font-bold text-center hover:bg-white transition border border-gray-200">View Fee Structure</a>
+                    <div class="reveal flex flex-col sm:flex-row gap-4">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScDgYMrfEt_Fkpi06eeCEZb5tBn9srAnUOU8y9T_M8sD1K2gA/viewform" class="cta-crimson px-8 py-4 rounded-xl text-base sm:text-lg font-bold text-center">Get Started Today</a>
+                        <a href="#fees" class="glass-panel text-[#310909] px-8 py-4 rounded-xl text-base sm:text-lg font-bold text-center hover:border-[#d53737] transition border border-black/10">View Fee Structure</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="trials" class="relative -mt-12 md:-mt-16 z-20 max-w-7xl mx-auto px-4 sm:px-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="bg-white border border-gray-200 rounded-2xl p-5 sm:p-8 flex flex-col md:flex-row items-center justify-between shadow-[0_10px_40px_rgba(0,0,0,0.08)]">
-                
+        <section id="trials" class="relative -mt-10 md:-mt-16 z-20 max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="glass-panel rounded-2xl p-5 sm:p-8 flex flex-col md:flex-row items-center justify-between border border-black/5 shadow-xl reveal">
                 <div class="w-full text-center md:text-left mb-6 md:mb-0">
-                    <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mb-2 flex items-center justify-center md:justify-start leading-tight">
-                        <i class="fas fa-calendar-check text-red-500 mr-3"></i>Upcoming Selection Trials
+                    <h3 class="text-xl sm:text-2xl font-bold text-[#310909] mb-2 flex items-center justify-center md:justify-start leading-tight">
+                        <i class="fas fa-calendar-check text-[#d53737] mr-3"></i>Upcoming Selection Trials
                     </h3>
-                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">Secure your spot for academy intake. Limited slots available per batch.</p>
+                    <p class="text-[#0f172a]/70 text-sm sm:text-base leading-relaxed">Secure your spot for academy intake. Limited slots available per batch.</p>
                 </div>
                 
                 <div class="flex flex-row items-stretch gap-3 sm:gap-4 justify-center flex-shrink-0 w-full md:w-auto">
-                    <div class="bg-white border border-gray-200 px-4 sm:px-6 py-3 sm:py-4 rounded-xl text-center flex flex-col justify-center min-w-[110px] sm:min-w-[130px] shadow-sm flex-1 md:flex-none">
-                        <span class="block text-xs sm:text-sm text-red-600 font-bold uppercase tracking-wide leading-tight mb-1 sm:mb-2">Next<br>Trial</span>
-                        <span class="block text-lg sm:text-xl font-black text-slate-900 leading-tight">Enquire<br>Now</span>
+                    <div class="glass-panel px-4 sm:px-6 py-3 sm:py-4 rounded-xl text-center flex flex-col justify-center min-w-[110px] sm:min-w-[130px] border border-black/10 flex-1 md:flex-none">
+                        <span class="block text-xs sm:text-sm text-[#d53737] font-bold uppercase tracking-wide leading-tight mb-1 sm:mb-2">Next<br>Trial</span>
+                        <span class="block text-lg sm:text-xl font-black text-[#310909] leading-tight font-heading">Enquire<br>Now</span>
                     </div>
                     
-                    <a href="https://wa.me/919873148229" class="bg-red-600 text-white font-bold px-4 sm:px-6 py-3 sm:py-4 rounded-xl hover:bg-red-700 transition flex flex-col items-center justify-center shadow-md min-w-[110px] sm:min-w-[130px] text-center flex-1 md:flex-none">
+                    <a href="https://wa.me/919873148229" class="cta-crimson font-bold px-4 sm:px-6 py-3 sm:py-4 rounded-xl flex flex-col items-center justify-center min-w-[110px] sm:min-w-[130px] text-center flex-1 md:flex-none font-heading">
                         <span class="block text-lg sm:text-xl leading-tight">Register<br>Now</span>
                     </a>
                 </div>
             </div>
         </section>
 
-        <section id="coach" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 overflow-hidden">
+        <section id="coach" class="py-20 md:py-28 max-w-7xl mx-auto px-4 sm:px-6">
             <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
-                <div class="relative group" data-aos="fade-right">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-red-500 to-orange-400 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-1000"></div>
-                    <div class="relative glass-panel rounded-2xl overflow-hidden border border-white p-2">
-                        <img src="coach.jpg" alt="Coach Sahaj Chadha with Trophy" class="w-full h-auto rounded-xl transition duration-500 brightness-90 saturate-75 hover:brightness-100 hover:saturate-100">
+                <div class="relative group tilt-card reveal">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-[#d53737] to-[#310909] rounded-2xl blur-lg opacity-25 group-hover:opacity-40 transition duration-700"></div>
+                    <div class="relative glass-card rounded-2xl overflow-hidden p-3 bg-white">
+                        <img src="coach.jpg" alt="Coach Sahaj Chadha with Trophy" class="w-full h-auto rounded-xl transition duration-500 brightness-95 contrast-105">
                     </div>
                 </div>
-                <div data-aos="fade-left">
-                    <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">THE <span class="text-gradient">EXPERIENCE</span></h2>
-                    <p class="text-base md:text-lg text-slate-600 mb-8 leading-relaxed font-medium">With over <strong class="text-slate-900 font-bold">12,000+ runs</strong> and global exposure playing in the competitive circuits of England, South Africa, and internationally for Cambodia, Coach Sahaj brings a modern, aggressive, and highly tactical approach to coaching.</p>
+                <div>
+                    <h2 class="reveal text-4xl md:text-5xl font-black text-[#310909] mb-6 leading-tight">THE <span class="text-gradient">EXPERIENCE</span></h2>
+                    <p class="reveal text-base md:text-lg text-[#0f172a]/80 mb-8 leading-relaxed font-normal">With over <strong class="text-[#310909] font-bold">12,000+ runs</strong> and global exposure playing in the competitive circuits of England, South Africa, and internationally for Cambodia, Coach Sahaj brings a modern, aggressive, and highly tactical approach to coaching.</p>
                     
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                        <div class="glass-panel p-5 sm:p-6 rounded-xl border-l-4 border-red-500 glow-border">
-                            <i class="fas fa-brain text-2xl text-red-500 mb-3"></i>
-                            <h4 class="text-slate-900 font-bold text-lg mb-1 leading-tight">Mental Fortitude</h4>
-                            <p class="text-sm text-slate-600 leading-relaxed">Match-scenario pressure training.</p>
+                        <div class="glass-card tilt-card p-5 sm:p-6 rounded-xl border-l-4 border-l-[#d53737] reveal">
+                            <i class="fas fa-brain text-2xl text-[#d53737] mb-3"></i>
+                            <h4 class="text-[#310909] font-bold text-lg mb-1 leading-tight">Mental Fortitude</h4>
+                            <p class="text-sm text-[#0f172a]/70 leading-relaxed">Match-scenario pressure training.</p>
                         </div>
-                        <div class="glass-panel p-5 sm:p-6 rounded-xl border-l-4 border-orange-500 glow-border">
-                            <i class="fas fa-dumbbell text-2xl text-orange-500 mb-3"></i>
-                            <h4 class="text-slate-900 font-bold text-lg mb-1 leading-tight">Elite Fitness</h4>
-                            <p class="text-sm text-slate-600 leading-relaxed">Cricket-specific strength & conditioning.</p>
+                        <div class="glass-card tilt-card p-5 sm:p-6 rounded-xl border-l-4 border-l-[#310909] reveal">
+                            <i class="fas fa-dumbbell text-2xl text-[#310909] mb-3"></i>
+                            <h4 class="text-[#310909] font-bold text-lg mb-1 leading-tight">Elite Fitness</h4>
+                            <p class="text-sm text-[#0f172a]/70 leading-relaxed">Cricket-specific strength & conditioning.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="fees" class="py-16 md:py-24 relative">
-            <div class="absolute inset-0 bg-white/50 backdrop-blur-md -z-10"></div>
+        <section id="fees" class="py-20 md:py-28 relative">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
-                <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-4 leading-tight" data-aos="fade-up">PROGRAMS & <span class="text-gradient">FEES</span></h2>
+                <h2 class="reveal text-4xl md:text-5xl font-black text-[#310909] mb-4 leading-tight">PROGRAMS & <span class="text-gradient">FEES</span></h2>
                 
-                <div class="inline-block bg-gradient-to-r from-red-50 to-white border border-red-200 text-slate-800 px-6 sm:px-10 py-3 sm:py-4 rounded-xl font-semibold mb-10 md:mb-14 shadow-sm" data-aos="fade-up" data-aos-delay="100">
-                    <i class="fas fa-info-circle text-red-500 mr-2"></i> 
-                    A one-time registration fee of <strong class="text-red-600">INR 1500/-</strong> applies to all new admissions.
+                <div class="reveal inline-block glass-panel border border-[#d53737]/25 text-[#310909] px-6 sm:px-10 py-3 sm:py-4 rounded-xl font-semibold mb-10 md:mb-14 shadow-sm">
+                    <i class="fas fa-info-circle text-[#d53737] mr-2"></i> 
+                    A one-time registration fee of <strong class="text-[#d53737]">INR 1500/-</strong> applies to all new admissions.
                 </div>
                 
-                <div class="grid grid-cols-2 gap-3 sm:gap-6 lg:gap-8 max-w-5xl mx-auto">
-                    
-                    <div class="glass-panel p-4 sm:p-8 rounded-2xl flex flex-col glow-border bg-white text-left" data-aos="fade-up" data-aos-delay="200">
-                        <h3 class="text-lg sm:text-2xl font-bold text-slate-900 mb-1 sm:mb-2 leading-tight">Group Session</h3>
-                        <p class="text-slate-500 text-xs sm:text-sm mb-4 h-auto sm:h-10">Standard academy batch training.</p>
-                        <div class="text-xl sm:text-4xl font-black text-slate-900 mb-4 sm:mb-6">INR 2500/- <span class="text-[10px] sm:text-sm text-slate-500 font-medium block sm:inline">/month</span></div>
-                        <ul class="space-y-2 sm:space-y-4 mb-6 sm:mb-8 flex-grow text-xs sm:text-base">
-                            <li class="flex items-start text-slate-700"><i class="fas fa-check text-red-500 mr-2 mt-1"></i>Net Sessions</li>
-                            <li class="flex items-start text-slate-700"><i class="fas fa-check text-red-500 mr-2 mt-1"></i>Fitness Drills</li>
-                            <li class="flex items-start text-slate-700"><i class="fas fa-check text-red-500 mr-2 mt-1"></i>Match Simulations</li>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+                    <div class="glass-card tilt-card p-6 sm:p-8 flex flex-col text-left reveal">
+                        <h3 class="text-lg sm:text-2xl font-bold text-[#310909] mb-1 sm:mb-2 leading-tight">Group Session</h3>
+                        <p class="text-[#0f172a]/60 text-xs sm:text-sm mb-4 h-auto sm:h-10">Minimum 6 players</p>
+                        <div class="text-xl sm:text-4xl font-black text-[#310909] mb-4 sm:mb-6 font-heading">INR 1500/- <span class="text-[10px] sm:text-sm text-[#0f172a]/60 font-normal font-sans block sm:inline">/session</span></div>
+                        <ul class="space-y-3 mb-6 sm:mb-8 flex-grow text-xs sm:text-sm text-[#0f172a]/80">
+                            <li class="flex items-start"><i class="fas fa-check text-[#d53737] mr-2.5 mt-1"></i>Net Sessions</li>
+                            <li class="flex items-start"><i class="fas fa-check text-[#d53737] mr-2.5 mt-1"></i>Fitness Drills</li>
+                            <li class="flex items-start"><i class="fas fa-check text-[#d53737] mr-2.5 mt-1"></i>Match Simulations</li>
                         </ul>
-                        <a href="https://wa.me/919873148229" class="w-full bg-slate-100 py-2 sm:py-3 rounded-lg text-slate-800 text-sm sm:text-base font-bold hover:bg-slate-200 transition border border-gray-200 text-center">Inquire</a>
+                        <a href="https://wa.me/919873148229" class="w-full glass-panel py-3 rounded-xl text-[#310909] text-sm sm:text-base font-bold hover:border-[#d53737] hover:text-[#d53737] transition text-center border border-black/10">Inquire</a>
                     </div>
 
-                    <div class="glass-panel p-4 sm:p-8 rounded-2xl flex flex-col glow-border bg-white text-left" data-aos="fade-up" data-aos-delay="300">
-                        <h3 class="text-lg sm:text-2xl font-bold text-slate-900 mb-1 sm:mb-2 leading-tight">1-on-1 Personal</h3>
-                        <p class="text-slate-500 text-xs sm:text-sm mb-4 h-auto sm:h-10">Dedicated personal attention.</p>
-                        <div class="text-xl sm:text-4xl font-black text-slate-900 mb-4 sm:mb-6">INR 12000/- <span class="text-[10px] sm:text-sm text-slate-500 font-medium block sm:inline">/month</span></div>
-                        <ul class="space-y-2 sm:space-y-4 mb-6 sm:mb-8 flex-grow text-xs sm:text-base">
-                            <li class="flex items-start text-slate-700"><i class="fas fa-check text-red-500 mr-2 mt-1"></i>Individual Focus</li>
-                            <li class="flex items-start text-slate-700"><i class="fas fa-check text-red-500 mr-2 mt-1"></i>Dedicated Nets</li>
-                            <li class="flex items-start text-slate-700"><i class="fas fa-check text-red-500 mr-2 mt-1"></i>Skill Correction</li>
+                    <div class="glass-card tilt-card p-6 sm:p-8 flex flex-col text-left reveal">
+                        <h3 class="text-lg sm:text-2xl font-bold text-[#310909] mb-1 sm:mb-2 leading-tight">1-on-1 Personal</h3>
+                        <p class="text-[#0f172a]/60 text-xs sm:text-sm mb-4 h-auto sm:h-10">Dedicated personal attention.</p>
+                        <div class="text-xl sm:text-4xl font-black text-[#310909] mb-4 sm:mb-6 font-heading">INR 3500/-<span class="text-[10px] sm:text-sm text-[#0f172a]/60 font-normal font-sans block sm:inline">/session</span></div>
+                        <ul class="space-y-3 mb-6 sm:mb-8 flex-grow text-xs sm:text-sm text-[#0f172a]/80">
+                            <li class="flex items-start"><i class="fas fa-check text-[#d53737] mr-2.5 mt-1"></i>Individual Focus</li>
+                            <li class="flex items-start"><i class="fas fa-check text-[#d53737] mr-2.5 mt-1"></i>Dedicated Nets</li>
+                            <li class="flex items-start"><i class="fas fa-check text-[#d53737] mr-2.5 mt-1"></i>Skill Correction</li>
                         </ul>
-                        <a href="https://wa.me/919873148229" class="w-full bg-slate-100 py-2 sm:py-3 rounded-lg text-slate-800 text-sm sm:text-base font-bold hover:bg-slate-200 transition border border-gray-200 text-center">Inquire</a>
+                        <a href="https://wa.me/919873148229" class="w-full glass-panel py-3 rounded-xl text-[#310909] text-sm sm:text-base font-bold hover:border-[#d53737] hover:text-[#d53737] transition text-center border border-black/10">Inquire</a>
                     </div>
 
-                    <div class="glass-panel p-4 sm:p-8 rounded-2xl flex flex-col relative transform sm:-translate-y-2 border-red-500 shadow-[0_15px_40px_rgba(220,38,38,0.15)] bg-white text-left" data-aos="fade-up" data-aos-delay="400">
-                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-red-600 to-red-800 text-white px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold tracking-widest whitespace-nowrap">WITH SAHAJ</div>
-                        <h3 class="text-lg sm:text-2xl font-bold text-slate-900 mb-1 sm:mb-2 leading-tight mt-2 sm:mt-0">High Performance</h3>
-                        <p class="text-slate-500 text-xs sm:text-sm mb-4 h-auto sm:h-10">Direct coaching by Sahaj Chadha.</p>
-                        <div class="text-xl sm:text-4xl font-black text-red-600 mb-4 sm:mb-6">Custom <span class="text-[10px] sm:text-sm text-slate-500 font-medium block sm:inline">Pricing</span></div>
-                        <ul class="space-y-2 sm:space-y-4 mb-6 sm:mb-8 flex-grow text-xs sm:text-base">
-                            <li class="flex items-start text-slate-700"><i class="fas fa-check text-red-500 mr-2 mt-1"></i>Pro Roadmap</li>
-                            <li class="flex items-start text-slate-700"><i class="fas fa-check text-red-500 mr-2 mt-1"></i>Video Analysis</li>
-                            <li class="flex items-start text-slate-700"><i class="fas fa-check text-red-500 mr-2 mt-1"></i>Diet & Nutrition</li>
+                    <div class="glass-card tilt-card p-6 sm:p-8 flex flex-col text-left border-[#d53737] shadow-[0_15px_35px_rgba(213,55,55,0.18)] relative reveal transform sm:-translate-y-2 bg-gradient-to-br from-white to-red-50/70">
+                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cta-crimson px-3.5 py-1 rounded-full text-[10px] sm:text-xs font-bold tracking-widest whitespace-nowrap shadow-md">WITH SAHAJ</div>
+                        <h3 class="text-lg sm:text-2xl font-bold text-[#310909] mb-1 sm:mb-2 leading-tight mt-2 sm:mt-0">High Performance</h3>
+                        <p class="text-[#0f172a]/60 text-xs sm:text-sm mb-4 h-auto sm:h-10">Direct coaching by Sahaj Chadha.</p>
+                        <div class="text-xl sm:text-4xl font-black text-[#d53737] mb-4 sm:mb-6 font-heading">Custom <span class="text-[10px] sm:text-sm text-[#0f172a]/60 font-normal font-sans block sm:inline">Pricing</span></div>
+                        <ul class="space-y-3 mb-6 sm:mb-8 flex-grow text-xs sm:text-sm text-[#0f172a]/80">
+                            <li class="flex items-start"><i class="fas fa-check text-[#d53737] mr-2.5 mt-1"></i>Pro Roadmap</li>
+                            <li class="flex items-start"><i class="fas fa-check text-[#d53737] mr-2.5 mt-1"></i>Video Analysis</li>
+                            <li class="flex items-start"><i class="fas fa-check text-[#d53737] mr-2.5 mt-1"></i>Diet & Nutrition</li>
                         </ul>
-                        <a href="https://wa.me/919873148229" class="w-full bg-red-600 text-white py-2 sm:py-3 rounded-lg text-sm sm:text-base font-bold hover:bg-red-700 transition text-center shadow-md">Get Quote</a>
+                        <a href="https://wa.me/919873148229" class="w-full cta-crimson py-3 rounded-xl text-sm sm:text-base font-bold text-center">Get Quote</a>
                     </div>
 
-                    <div class="glass-panel p-4 sm:p-8 rounded-2xl flex flex-col glow-border bg-white text-left" data-aos="fade-up" data-aos-delay="500">
-                        <h3 class="text-lg sm:text-2xl font-bold text-slate-900 mb-1 sm:mb-2 leading-tight">Online Training</h3>
-                        <p class="text-slate-500 text-xs sm:text-sm mb-4 h-auto sm:h-10">Available worldwide.</p>
-                        <div class="text-xl sm:text-4xl font-black text-slate-900 mb-4 sm:mb-6">Custom <span class="text-[10px] sm:text-sm text-slate-500 font-medium block sm:inline">Pricing</span></div>
-                        <ul class="space-y-2 sm:space-y-4 mb-6 sm:mb-8 flex-grow text-xs sm:text-base">
-                            <li class="flex items-start text-slate-700"><i class="fas fa-check text-red-500 mr-2 mt-1"></i>Digital Analysis</li>
-                            <li class="flex items-start text-slate-700"><i class="fas fa-check text-red-500 mr-2 mt-1"></i>Fitness Plans</li>
-                            <li class="flex items-start text-slate-700"><i class="fas fa-check text-red-500 mr-2 mt-1"></i>Tactical Zoom Calls</li>
+                    <div class="glass-card tilt-card p-6 sm:p-8 flex flex-col text-left reveal">
+                        <h3 class="text-lg sm:text-2xl font-bold text-[#310909] mb-1 sm:mb-2 leading-tight">Online Training</h3>
+                        <p class="text-[#0f172a]/60 text-xs sm:text-sm mb-4 h-auto sm:h-10">Available worldwide.</p>
+                        <div class="text-xl sm:text-4xl font-black text-[#310909] mb-4 sm:mb-6 font-heading">INR 2500/-<span class="text-[10px] sm:text-sm text-[#0f172a]/60 font-normal font-sans block sm:inline">/session</span></div>
+                        <ul class="space-y-3 mb-6 sm:mb-8 flex-grow text-xs sm:text-sm text-[#0f172a]/80">
+                            <li class="flex items-start"><i class="fas fa-check text-[#d53737] mr-2.5 mt-1"></i>Digital Analysis</li>
+                            <li class="flex items-start"><i class="fas fa-check text-[#d53737] mr-2.5 mt-1"></i>Fitness Plans</li>
+                            <li class="flex items-start"><i class="fas fa-check text-[#d53737] mr-2.5 mt-1"></i>Tactical Zoom Calls</li>
                         </ul>
-                        <a href="https://wa.me/919873148229" class="w-full bg-slate-100 py-2 sm:py-3 rounded-lg text-slate-800 text-sm sm:text-base font-bold hover:bg-slate-200 transition border border-gray-200 text-center">Inquire</a>
+                        <a href="https://wa.me/919873148229" class="w-full glass-panel py-3 rounded-xl text-[#310909] text-sm sm:text-base font-bold hover:border-[#d53737] hover:text-[#d53737] transition text-center border border-black/10">Inquire</a>
                     </div>
-                    
                 </div>
             </div>
         </section>
 
-        <section id="testimonials" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="text-center mb-10 md:mb-16" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-4 leading-tight">HEAR FROM OUR <span class="text-gradient">PLAYERS</span></h2>
-                <p class="text-slate-600 font-medium leading-relaxed max-w-2xl mx-auto">Real results from parents and students who have transformed their game at Sahaj Chadha Cricket Academy.</p>
+        <section id="testimonials" class="py-20 md:py-28 max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="reveal text-4xl md:text-5xl font-black text-[#310909] mb-4 leading-tight">HEAR FROM OUR <span class="text-gradient">PLAYERS</span></h2>
+                <p class="reveal text-[#0f172a]/80 font-normal leading-relaxed max-w-2xl mx-auto">Real results from parents and students who have transformed their game at Sahaj Chadha Cricket Academy.</p>
             </div>
             
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden group cursor-pointer hover:-translate-y-2 transition duration-300" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="relative h-48 sm:h-56 bg-slate-800">
-                        <img src="https://images.unsplash.com/photo-1518605368461-1e122241f92e?auto=format&fit=crop&q=80" alt="Student Training" class="w-full h-full object-cover opacity-70 group-hover:opacity-50 transition">
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <i class="fas fa-play-circle text-5xl text-white opacity-90 group-hover:scale-110 transition-transform drop-shadow-lg"></i>
+                <div class="glass-card tilt-card overflow-hidden group cursor-pointer reveal">
+                    <div class="relative h-48 sm:h-56 bg-[#310909]/10 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1518605368461-1e122241f92e?auto=format&fit=crop&q=80" alt="Student Training" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-[#310909]/30 flex items-center justify-center">
+                            <i class="fas fa-play-circle text-5xl text-white opacity-90 group-hover:scale-110 group-hover:text-[#d53737] transition-all drop-shadow-lg"></i>
                         </div>
                     </div>
                     <div class="p-6">
-                        <div class="flex text-yellow-400 mb-2 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="text-slate-700 text-sm leading-relaxed italic mb-4">"Coach Sahaj completely fixed my batting stance. Within 3 months, I was selected for my district team. The high-performance drills are intense but worth it."</p>
-                        <h4 class="font-bold text-slate-900 leading-tight">Aryan Sharma</h4>
-                        <span class="text-xs text-slate-500 font-medium uppercase tracking-wide">U-16 Player</span>
+                        <div class="flex text-[#d53737] mb-2 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="text-[#0f172a]/80 text-sm leading-relaxed italic mb-4">"Coach Sahaj completely fixed my batting stance. Within 3 months, I was selected for my district team. The high-performance drills are intense but worth it."</p>
+                        <h4 class="font-bold text-[#310909] leading-tight font-heading">Aryan Sharma</h4>
+                        <span class="text-xs text-[#0f172a]/50 font-semibold uppercase tracking-wide">U-16 Player</span>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden group cursor-pointer hover:-translate-y-2 transition duration-300" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="relative h-48 sm:h-56 bg-slate-800">
-                        <img src="https://images.unsplash.com/photo-1540747913346-19e3adca174f?auto=format&fit=crop&q=80" alt="Cricket Nets" class="w-full h-full object-cover opacity-70 group-hover:opacity-50 transition">
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <i class="fas fa-play-circle text-5xl text-white opacity-90 group-hover:scale-110 transition-transform drop-shadow-lg"></i>
+                <div class="glass-card tilt-card overflow-hidden group cursor-pointer reveal">
+                    <div class="relative h-48 sm:h-56 bg-[#310909]/10 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1540747913346-19e3adca174f?auto=format&fit=crop&q=80" alt="Cricket Nets" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-[#310909]/30 flex items-center justify-center">
+                            <i class="fas fa-play-circle text-5xl text-white opacity-90 group-hover:scale-110 group-hover:text-[#d53737] transition-all drop-shadow-lg"></i>
                         </div>
                     </div>
                     <div class="p-6">
-                        <div class="flex text-yellow-400 mb-2 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="text-slate-700 text-sm leading-relaxed italic mb-4">"We shifted our son here from another academy. The difference is night and day. Sahaj Sir gives personal attention and tracks fitness meticulously."</p>
-                        <h4 class="font-bold text-slate-900 leading-tight">Mr. Rajesh Gupta</h4>
-                        <span class="text-xs text-slate-500 font-medium uppercase tracking-wide">Parent</span>
+                        <div class="flex text-[#d53737] mb-2 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="text-[#0f172a]/80 text-sm leading-relaxed italic mb-4">"We shifted our son here from another academy. The difference is night and day. Sahaj Sir gives personal attention and tracks fitness meticulously."</p>
+                        <h4 class="font-bold text-[#310909] leading-tight font-heading">Mr. Rajesh Gupta</h4>
+                        <span class="text-xs text-[#0f172a]/50 font-semibold uppercase tracking-wide">Parent</span>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden group cursor-pointer hover:-translate-y-2 transition duration-300" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="relative h-48 sm:h-56 bg-slate-800">
-                        <img src="https://images.unsplash.com/photo-1587280501635-a197001572d4?auto=format&fit=crop&q=80" alt="Fitness Training" class="w-full h-full object-cover opacity-70 group-hover:opacity-50 transition">
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <i class="fas fa-play-circle text-5xl text-white opacity-90 group-hover:scale-110 transition-transform drop-shadow-lg"></i>
+                <div class="glass-card tilt-card overflow-hidden group cursor-pointer reveal">
+                    <div class="relative h-48 sm:h-56 bg-[#310909]/10 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1587280501635-a197001572d4?auto=format&fit=crop&q=80" alt="Fitness Training" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-[#310909]/30 flex items-center justify-center">
+                            <i class="fas fa-play-circle text-5xl text-white opacity-90 group-hover:scale-110 group-hover:text-[#d53737] transition-all drop-shadow-lg"></i>
                         </div>
                     </div>
                     <div class="p-6">
-                        <div class="flex text-yellow-400 mb-2 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="text-slate-700 text-sm leading-relaxed italic mb-4">"The video analysis sessions helped me understand exactly where I was losing pace in my bowling. Best academy in Noida without a doubt."</p>
-                        <h4 class="font-bold text-slate-900 leading-tight">Kabir Singh</h4>
-                        <span class="text-xs text-slate-500 font-medium uppercase tracking-wide">Competitive League</span>
+                        <div class="flex text-[#d53737] mb-2 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="text-[#0f172a]/80 text-sm leading-relaxed italic mb-4">"The video analysis sessions helped me understand exactly where I was losing pace in my bowling. Best academy in Noida without a doubt."</p>
+                        <h4 class="font-bold text-[#310909] leading-tight font-heading">Kabir Singh</h4>
+                        <span class="text-xs text-[#0f172a]/50 font-semibold uppercase tracking-wide">Competitive League</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="py-12 md:py-16 max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="bg-gradient-to-r from-red-600 to-red-800 rounded-3xl p-8 md:p-14 flex flex-col md:flex-row items-center justify-between shadow-2xl relative overflow-hidden" data-aos="fade-up">
-                <i class="fas fa-dumbbell absolute -right-10 -top-10 text-9xl text-white opacity-10 transform rotate-12"></i>
+            <div class="glass-panel border border-[#d53737]/30 rounded-3xl p-8 md:p-14 flex flex-col md:flex-row items-center justify-between shadow-xl relative overflow-hidden reveal bg-gradient-to-r from-white via-red-50/50 to-white">
+                <i class="fas fa-dumbbell absolute -right-10 -top-10 text-9xl text-[#310909] opacity-5 transform rotate-12 pointer-events-none"></i>
                 
                 <div class="relative z-10 mb-8 md:mb-0 text-center md:text-left">
-                    <div class="inline-block px-3 py-1 bg-red-900/50 text-red-100 text-[10px] sm:text-xs font-bold uppercase tracking-widest rounded-full mb-3 border border-red-500/30">Available Worldwide</div>
-                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-3 md:mb-4 leading-tight">Train from Anywhere</h2>
-                    <p class="text-red-100 text-base md:text-lg lg:text-xl font-medium max-w-xl leading-relaxed">Online Coaching & High-Performance Fitness Classes are now available. Get elite guidance directly on your screen.</p>
+                    <div class="inline-block px-3 py-1 bg-red-100 text-[#d53737] text-[10px] sm:text-xs font-bold uppercase tracking-widest rounded-full mb-3 border border-[#d53737]/20">Available Worldwide</div>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-[#310909] mb-3 md:mb-4 leading-tight">Train from Anywhere</h2>
+                    <p class="text-[#0f172a]/75 text-base md:text-lg lg:text-xl font-normal max-w-xl leading-relaxed">Online Coaching & High-Performance Fitness Classes are now available. Get elite guidance directly on your screen.</p>
                 </div>
                 
                 <div class="relative z-10 w-full md:w-auto">
-                    <a href="https://wa.me/919873148229" class="group bg-white text-slate-900 font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:bg-slate-50 transition shadow-[0_10px_25px_rgba(0,0,0,0.15)] whitespace-nowrap text-base sm:text-lg flex items-center justify-center gap-3 w-full">
-                        <i class="fab fa-whatsapp text-2xl sm:text-3xl text-[#25D366] group-hover:scale-110 transition-transform"></i> Contact Us
+                    <a href="https://wa.me/919873148229" class="group bg-[#25D366] text-white font-bold px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl hover:bg-[#20bd5a] transition shadow-lg whitespace-nowrap text-base sm:text-lg flex items-center justify-center gap-3 w-full font-heading">
+                        <i class="fab fa-whatsapp text-2xl sm:text-3xl group-hover:scale-110 transition-transform"></i> Contact Us
                     </a>
                 </div>
             </div>
         </section>
 
         <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="bg-slate-900 rounded-3xl p-8 md:p-14 flex flex-col md:flex-row items-center justify-between shadow-xl relative overflow-hidden" data-aos="zoom-in">
-                
+            <div class="glass-panel border border-black/5 rounded-3xl p-8 md:p-14 flex flex-col md:flex-row items-center justify-between shadow-xl relative overflow-hidden reveal">
                 <div class="relative z-10 mb-6 md:mb-0 text-center md:text-left flex flex-col md:flex-row gap-6 md:gap-8 items-center w-full">
-                    <div class="w-20 h-20 sm:w-24 sm:h-24 bg-red-600 rounded-full flex items-center justify-center flex-shrink-0 shadow-[0_0_30px_rgba(220,38,38,0.4)] shadow-red-500/50 animate-pulse">
+                    <div class="w-20 h-20 sm:w-24 sm:h-24 bg-[#FF0000] rounded-full flex items-center justify-center flex-shrink-0 shadow-[0_0_30px_rgba(255,0,0,0.35)] animate-pulse">
                         <i class="fab fa-youtube text-white text-4xl sm:text-5xl"></i>
                     </div>
                     <div>
-                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-2 md:mb-3 leading-tight">Free Daily Coaching Tips</h2>
-                        <p class="text-slate-400 text-sm sm:text-base font-medium max-w-xl leading-relaxed">Subscribe to our YouTube channel for exclusive batting masterclasses, fitness routines, and behind-the-scenes academy footage.</p>
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-[#310909] mb-2 md:mb-3 leading-tight">Free Daily Coaching Tips</h2>
+                        <p class="text-[#0f172a]/70 text-sm sm:text-base font-normal max-w-xl leading-relaxed">Subscribe to our YouTube channel for exclusive batting masterclasses, fitness routines, and behind-the-scenes academy footage.</p>
                     </div>
                 </div>
                 
                 <div class="relative z-10 w-full md:w-auto mt-6 md:mt-0">
-                    <a href="https://www.youtube.com/@sahajchadhacricketacademy" target="_blank" class="bg-red-600 text-white font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:bg-red-700 transition shadow-lg whitespace-nowrap text-base sm:text-lg flex items-center justify-center gap-3 w-full border border-red-500">
+                    <a href="https://www.youtube.com/@sahajchadhacricketacademy" target="_blank" class="bg-[#FF0000] hover:bg-[#d90000] text-white font-bold px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl shadow-lg transition whitespace-nowrap text-base sm:text-lg flex items-center justify-center gap-3 w-full font-heading">
                         Subscribe Now
                     </a>
                 </div>
             </div>
         </section>
 
-        <section id="faq" class="py-16 md:py-24 max-w-4xl mx-auto px-4 sm:px-6">
-            <div class="text-center mb-10 md:mb-12" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4 leading-tight">FREQUENTLY ASKED <span class="text-gradient">QUESTIONS</span></h2>
-                <p class="text-slate-600 font-medium leading-relaxed">Everything you need to know about joining SCCA.</p>
+        <section id="faq" class="py-20 md:py-28 max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10 md:mb-12">
+                <h2 class="reveal text-3xl md:text-4xl font-black text-[#310909] mb-4 leading-tight">FREQUENTLY ASKED <span class="text-gradient">QUESTIONS</span></h2>
+                <p class="reveal text-[#0f172a]/70 font-normal leading-relaxed">Everything you need to know about joining SCCA.</p>
             </div>
 
             <div class="space-y-6">
-                <article class="bg-white border border-gray-200 p-6 rounded-2xl shadow-sm" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="font-bold text-slate-900 text-lg mb-2 leading-tight">What age groups do you coach at the academy?</h3>
-                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">We cater to all age groups. Our Development program starts at U-12 (Under 12 years), while our Competitive and High-Performance programs are designed for active league players of all ages up to senior levels.</p>
+                <article class="glass-card p-6 rounded-2xl reveal">
+                    <h3 class="font-bold text-[#310909] text-lg mb-2 leading-tight font-heading">What age groups do you coach at the academy?</h3>
+                    <p class="text-[#0f172a]/70 text-sm sm:text-base leading-relaxed">We cater to all age groups. Our Development program starts at U-12 (Under 12 years), while our Competitive and High-Performance programs are designed for active league players of all ages up to senior levels.</p>
                 </article>
 
-                <article class="bg-white border border-gray-200 p-6 rounded-2xl shadow-sm" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="font-bold text-slate-900 text-lg mb-2 leading-tight">Where is Sahaj Chadha Cricket Academy located?</h3>
-                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">We are primarily located in Noida, U.P., India. For exact ground locations and net practice venues, please reach out via WhatsApp or phone to book your initial trial.</p>
+                <article class="glass-card p-6 rounded-2xl reveal">
+                    <h3 class="font-bold text-[#310909] text-lg mb-2 leading-tight font-heading">Where is Sahaj Chadha Cricket Academy located?</h3>
+                    <p class="text-[#0f172a]/70 text-sm sm:text-base leading-relaxed">We are primarily located in Noida, U.P., India. For exact ground locations and net practice venues, please reach out via WhatsApp or phone to book your initial trial.</p>
                 </article>
 
-                <article class="bg-white border border-gray-200 p-6 rounded-2xl shadow-sm" data-aos="fade-up" data-aos-delay="300">
-                    <h3 class="font-bold text-slate-900 text-lg mb-2 leading-tight">Do you offer personal 1-on-1 coaching?</h3>
-                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">Yes. Our 'Personal Training' and 'High Performance' tiers are exclusively dedicated to one-on-one sessions. This includes video analysis, personalized diet plans, and advanced biomechanics correction directly with Coach Sahaj.</p>
+                <article class="glass-card p-6 rounded-2xl reveal">
+                    <h3 class="font-bold text-[#310909] text-lg mb-2 leading-tight font-heading">Do you offer personal 1-on-1 coaching?</h3>
+                    <p class="text-[#0f172a]/70 text-sm sm:text-base leading-relaxed">Yes. Our 'Personal Training' and 'High Performance' tiers are exclusively dedicated to one-on-one sessions. This includes video analysis, personalized diet plans, and advanced biomechanics correction directly with Coach Sahaj.</p>
                 </article>
             </div>
         </section>
-
     </main>
 
-    <footer class="border-t border-gray-200 bg-white pt-12 md:pt-16 pb-8">
+    <footer class="border-t border-black/5 bg-white/95 backdrop-blur-md pt-14 md:pt-20 pb-8 relative z-10 shadow-[0_-5px_25px_rgba(0,0,0,0.02)]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-10 md:gap-12 mb-10 md:mb-12">
             <div>
                 <div class="flex items-center gap-4 sm:gap-6 mb-6">
                     <img src="logo.svg" alt="SCCA Logo" class="h-14 sm:h-20 md:h-24 w-auto flex-shrink-0">
-                    <div class="text-xl md:text-3xl font-black text-slate-900 leading-tight">
+                    <div class="text-xl md:text-3xl font-black text-[#310909] leading-tight font-heading">
                         SAHAJ CHADHA<br><span class="text-gradient">CRICKET ACADEMY</span>
                     </div>
                 </div>
-                <p class="text-slate-600 mb-6 max-w-sm font-medium leading-relaxed text-sm sm:text-base">Elevating the standard of cricket coaching in India with international techniques and professional standards.</p>
+                <p class="text-[#0f172a]/70 mb-6 max-w-sm font-normal leading-relaxed text-sm sm:text-base">Elevating the standard of cricket coaching in India with international techniques and professional standards.</p>
+                
                 <div class="flex space-x-4">
-                    <a href="https://www.instagram.com/sahajchadhacricketacademy/" target="_blank" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-slate-600 hover:bg-red-600 hover:text-white transition shadow-sm"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/sahaj.chadha/" target="_blank" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-slate-600 hover:bg-red-600 hover:text-white transition shadow-sm"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.youtube.com/@sahajchadhacricketacademy" target="_blank" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-slate-600 hover:bg-red-600 hover:text-white transition shadow-sm"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/sahajchadhacricketacademy/" target="_blank" class="social-btn social-instagram" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/sahaj.chadha/" target="_blank" class="social-btn social-facebook" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@sahajchadhacricketacademy" target="_blank" class="social-btn social-youtube" title="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
                 </div>
             </div>
             
-            <div class="bg-gray-50 border border-gray-100 p-6 sm:p-8 rounded-2xl shadow-sm">
-                <h4 class="text-lg sm:text-xl font-bold text-slate-900 mb-6 leading-tight">Contact Us</h4>
-                <div class="space-y-4 text-slate-600 font-medium text-sm sm:text-base">
+            <div class="glass-card p-6 sm:p-8 rounded-2xl bg-white/70">
+                <h4 class="text-lg sm:text-xl font-bold text-[#310909] mb-6 leading-tight font-heading">Contact Us</h4>
+                <div class="space-y-4 text-[#0f172a]/80 font-medium text-sm sm:text-base">
                     <p class="flex items-center gap-3">
-                        <i class="fas fa-phone-alt w-5 text-red-500 text-center"></i> 
-                        <a href="tel:+919873148229" class="hover:text-red-600 transition">+91-9873148229</a>
+                        <i class="fas fa-phone-alt w-5 text-[#d53737] text-center"></i> 
+                        <a href="tel:+919873148229" class="hover:text-[#d53737] transition">+91-9873148229</a>
                     </p>
                     <p class="flex items-center gap-3">
-                        <i class="fas fa-envelope w-5 text-red-500 text-center"></i> 
-                        <a href="mailto:sahajcricketacademy@gmail.com" class="hover:text-red-600 transition">sahajcricketacademy@gmail.com</a>
+                        <i class="fas fa-envelope w-5 text-[#d53737] text-center"></i> 
+                        <a href="mailto:sahajcricketacademy@gmail.com" class="hover:text-[#d53737] transition">sahajcricketacademy@gmail.com</a>
                     </p>
                     <p class="flex items-center gap-3">
-                        <i class="fas fa-map-marker-alt w-5 text-red-500 text-center"></i> 
-                        <a href="https://maps.google.com/?q=Noida,+U.P,+India" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition">Noida, U.P, India</a>
+                        <i class="fas fa-map-marker-alt w-5 text-[#d53737] text-center"></i> 
+                        <a href="https://maps.google.com/?q=Noida,+U.P,+India" target="_blank" rel="noopener noreferrer" class="hover:text-[#d53737] transition">Noida, U.P, India</a>
                     </p>
                 </div>
             </div>
         </div>
-        <div class="text-center text-slate-500 text-xs sm:text-sm font-medium">
+        <div class="text-center text-[#0f172a]/50 text-xs sm:text-sm font-normal border-t border-black/5 pt-6">
             © 2026 Sahaj Chadha Cricket Academy. All rights reserved.
         </div>
     </footer>
@@ -385,13 +518,46 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            once: true,
-            offset: 80,
-            duration: 600,
-            easing: 'ease-out-cubic',
+        // Mouse Follower
+        const cursorGlow = document.getElementById('cursorGlow');
+        window.addEventListener('mousemove', (e) => {
+            cursorGlow.style.left = `${e.clientX}px`;
+            cursorGlow.style.top = `${e.clientY}px`;
+        });
+
+        // Intersection Observer for Scroll Reveals
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+        // 3D Perspective Tilt on Hover
+        const tiltCards = document.querySelectorAll('.tilt-card');
+        tiltCards.forEach((card) => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                const rotateX = -(y / (rect.height / 2)) * 6;
+                const rotateY = (x / (rect.width / 2)) * 6;
+
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+                card.style.transition = 'transform 0.5s ease';
+            });
+
+            card.addEventListener('mouseenter', () => {
+                card.style.transition = 'none';
+            });
         });
     </script>
 </body>
