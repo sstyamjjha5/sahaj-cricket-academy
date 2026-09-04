@@ -4,19 +4,123 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Sahaj Chadha Cricket Academy | Elite Cricket Coaching in Noida</title>
-    <meta name="description" content="Train under International Cricketer Sahaj Chadha in Noida. Elite cricket coaching, fitness programs, and online training for all age groups. Book a trial today!">
-    <meta name="keywords" content="cricket academy in Noida, cricket coaching, Sahaj Chadha, professional cricket training, online cricket coaching, youth cricket academy">
+    <!-- SEO & AEO Meta Tags -->
+    <title>Sahaj Chadha Cricket Academy | ECB Level 2 Certified Global Cricket Coaching</title>
+    <meta name="description" content="Train under Sahaj Chadha ECB Level 2 Certified Coach, Cambodia National Team player, with a decade of experience across the UK, South Africa & India. Elite cricket coaching online & in-person for all age groups.">
+    <meta name="keywords" content="online cricket coaching, ECB Level 2 certified cricket coach, international cricket academy, Sahaj Chadha, global cricket training, cricket coaching for kids, 1-on-1 cricket coaching online, cricket fitness training">
     <meta name="author" content="Sahaj Chadha Cricket Academy">
     
+    <!-- Tailwind & Icons -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="logo.svg">
     
+    <!-- JSON-LD Structured Data for AEO / SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://sahajchadha.com/#coach",
+          "name": "Sahaj Chadha",
+          "jobTitle": "Cricket Coach",
+          "hasCredential": {
+            "@type": "EducationalOccupationalCredential",
+            "name": "ECB Level 2 Certified Coach",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "England and Wales Cricket Board"
+            }
+          },
+          "memberOf": {
+            "@type": "SportsTeam",
+            "name": "Cambodia National Cricket Team"
+          },
+          "description": "ECB Level 2 Certified Coach and Cambodia National Team cricketer with a decade of experience across the UK, South Africa, and India."
+        },
+        {
+          "@type": "SportsOrganization",
+          "@id": "https://sahajchadha.com/#organization",
+          "name": "Sahaj Chadha Cricket Academy",
+          "url": "https://sahajchadha.com",
+          "logo": "https://sahajchadha.com/logo.svg",
+          "areaServed": "Worldwide",
+          "founder": {
+            "@id": "https://sahajchadha.com/#coach"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+91-9873148229",
+            "contactType": "customer service",
+            "email": "sahajcricketacademy@gmail.com"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Is Sahaj Chadha a certified cricket coach?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Sahaj Chadha is an ECB (England & Wales Cricket Board) Level 2 Certified Cricket Coach, with a decade of playing and coaching experience across the UK, South Africa, and internationally for the Cambodia National Team."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I train with Sahaj Chadha Cricket Academy from outside India?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. The academy offers online coaching worldwide, including video analysis, fitness plans, and live tactical Zoom sessions designed for players who don't have access to in-person nets."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What makes Sahaj Chadha's coaching different from other academies?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sahaj combines international playing experience (Cambodia National Team, UK and South Africa club cricket) with a formal ECB Level 2 coaching certification bringing a data-informed, tactical approach backed by performance stats from sources like ESPNcricinfo, Cricbuzz, and the ICC."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is there a registration fee to join the academy?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. There is no one-time registration fee. You only pay per session or program based on the tier you choose Group, 1-on-1 Personal, High Performance, or Online Training."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What age groups do you coach at the academy?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We cater to all age groups. Our Development program starts at U-12 (Under 12 years), while our Competitive and High-Performance programs are designed for active league players of all ages up to senior levels."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Where is Sahaj Chadha Cricket Academy located?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sahaj Chadha Cricket Academy operates globally offering online coaching to students anywhere in the world, alongside in-person high-performance sessions. Coach Sahaj has trained players across the UK, South Africa, and India. To find the nearest in-person session or start online, reach out via WhatsApp or phone."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you offer personal 1-on-1 coaching?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Our 'Personal Training' and 'High Performance' tiers are exclusively dedicated to one-on-one sessions. This includes video analysis, personalized diet plans, and advanced biomechanics correction directly with Coach Sahaj."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
     <style>
         :root {
             --crimson: #d53737;
@@ -38,8 +142,9 @@
             scroll-behavior: smooth;
         }
 
+        /* Pure Sans-Serif Typography */
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             background-color: #ffffff;
             color: var(--dark-charcoal);
             overflow-x: hidden;
@@ -50,10 +155,9 @@
             background-position: 0 0, 16px 16px;
         }
 
-        /* Modern Display Font for Headings */
-        h1, h2, h3, .font-heading {
-            font-family: 'Syne', sans-serif;
-            letter-spacing: -0.03em;
+        h1, h2, h3, h4, .font-heading {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            letter-spacing: -0.02em;
         }
 
         /* Ambient Glow Meshes */
@@ -131,7 +235,6 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* Minimalist Clean Gradient Hero */
         .hero-clean {
             background: radial-gradient(circle at 80% 20%, rgba(213, 55, 55, 0.08) 0%, transparent 60%),
                         radial-gradient(circle at 10% 80%, rgba(49, 9, 9, 0.05) 0%, transparent 50%),
@@ -187,6 +290,13 @@
             background-color: #FF0000;
             box-shadow: 0 4px 15px rgba(255, 0, 0, 0.35);
         }
+
+        /* Tab styling */
+        .tab-btn.active {
+            background: #d53737;
+            color: #ffffff;
+            border-color: #d53737;
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-[#d53737] selection:text-white">
@@ -195,6 +305,7 @@
     <div class="ambient-glow glow-bottom"></div>
     <div class="cursor-glow" id="cursorGlow"></div>
 
+    <!-- Navigation -->
     <nav class="fixed w-full z-50 glass-panel border-b border-black/5 top-0">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center relative z-10">
             <a href="#" class="flex items-center gap-3 sm:gap-4">
@@ -206,6 +317,7 @@
 
             <div class="hidden lg:flex space-x-8 font-semibold text-sm tracking-wide text-[#310909]/80">
                 <a href="#coach" class="hover:text-[#d53737] transition">THE COACH</a>
+                <a href="#stats" class="hover:text-[#d53737] transition">BY THE NUMBERS</a>
                 <a href="#fees" class="hover:text-[#d53737] transition">PROGRAMS</a>
                 <a href="#testimonials" class="hover:text-[#d53737] transition">REVIEWS</a>
                 <a href="#faq" class="hover:text-[#d53737] transition">FAQ</a>
@@ -218,7 +330,8 @@
     </nav>
 
     <main class="relative z-10">
-        <section class="hero-clean min-h-[85vh] md:min-h-screen flex items-center relative pt-28 md:pt-20">
+        <!-- Hero Section -->
+        <section class="hero-clean min-h-[85vh] md:min-h-screen flex items-center relative pt-28 md:pt-24 pb-12">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 w-full relative z-10">
                 <div class="max-w-3xl">
                     <div class="reveal inline-block px-4 py-1.5 rounded-full border border-[#d53737]/30 bg-red-50 text-[#d53737] text-xs sm:text-sm font-bold tracking-widest mb-6 backdrop-blur-md uppercase">
@@ -228,7 +341,7 @@
                         MASTER YOUR <br><span class="text-gradient">GAME.</span>
                     </h1>
                     <p class="reveal text-base sm:text-xl md:text-2xl mb-8 md:mb-10 text-[#310909]/80 font-normal max-w-2xl leading-relaxed">
-                        Train under Cambodia International cricketer Sahaj Chadha in Noida. Transform raw talent into match-winning performance.
+                        Train under Sahaj Chadha — ECB Level 2 Certified Coach and Cambodia National Team cricketer, with a decade of experience coaching across the UK, South Africa, and India. Available globally, in-person and online.
                     </p>
                     <div class="reveal flex flex-col sm:flex-row gap-4">
                         <a href="https://docs.google.com/forms/d/e/1FAIpQLScDgYMrfEt_Fkpi06eeCEZb5tBn9srAnUOU8y9T_M8sD1K2gA/viewform" class="cta-crimson px-8 py-4 rounded-xl text-base sm:text-lg font-bold text-center">Get Started Today</a>
@@ -238,39 +351,55 @@
             </div>
         </section>
 
-        <section id="trials" class="relative -mt-10 md:-mt-16 z-20 max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="glass-panel rounded-2xl p-5 sm:p-8 flex flex-col md:flex-row items-center justify-between border border-black/5 shadow-xl reveal">
-                <div class="w-full text-center md:text-left mb-6 md:mb-0">
-                    <h3 class="text-xl sm:text-2xl font-bold text-[#310909] mb-2 flex items-center justify-center md:justify-start leading-tight">
-                        <i class="fas fa-calendar-check text-[#d53737] mr-3"></i>Upcoming Selection Trials
-                    </h3>
-                    <p class="text-[#0f172a]/70 text-sm sm:text-base leading-relaxed">Secure your spot for academy intake. Limited slots available per batch.</p>
-                </div>
-                
-                <div class="flex flex-row items-stretch gap-3 sm:gap-4 justify-center flex-shrink-0 w-full md:w-auto">
-                    <div class="glass-panel px-4 sm:px-6 py-3 sm:py-4 rounded-xl text-center flex flex-col justify-center min-w-[110px] sm:min-w-[130px] border border-black/10 flex-1 md:flex-none">
-                        <span class="block text-xs sm:text-sm text-[#d53737] font-bold uppercase tracking-wide leading-tight mb-1 sm:mb-2">Next<br>Trial</span>
-                        <span class="block text-lg sm:text-xl font-black text-[#310909] leading-tight font-heading">Enquire<br>Now</span>
+        <!-- Credential Trust Bar (Replaces Trials Strip) -->
+        <section class="relative -mt-8 md:-mt-12 z-20 max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="glass-panel rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between border border-black/5 shadow-xl reveal gap-6">
+                <div class="flex items-center gap-4 text-center md:text-left">
+                    <div class="w-12 h-12 rounded-xl bg-red-50 text-[#d53737] flex items-center justify-center text-xl flex-shrink-0 border border-[#d53737]/20">
+                        <i class="fas fa-certificate"></i>
                     </div>
-                    
-                    <a href="https://wa.me/919873148229" class="cta-crimson font-bold px-4 sm:px-6 py-3 sm:py-4 rounded-xl flex flex-col items-center justify-center min-w-[110px] sm:min-w-[130px] text-center flex-1 md:flex-none font-heading">
-                        <span class="block text-lg sm:text-xl leading-tight">Register<br>Now</span>
-                    </a>
+                    <div>
+                        <h3 class="text-base sm:text-lg font-bold text-[#310909]">ECB Level 2 Certified</h3>
+                        <p class="text-xs sm:text-sm text-[#0f172a]/70">England & Wales Cricket Board Qualification</p>
+                    </div>
+                </div>
+                <div class="hidden md:block w-px h-10 bg-black/10"></div>
+                <div class="flex items-center gap-4 text-center md:text-left">
+                    <div class="w-12 h-12 rounded-xl bg-red-50 text-[#d53737] flex items-center justify-center text-xl flex-shrink-0 border border-[#d53737]/20">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base sm:text-lg font-bold text-[#310909]">A Decade of Experience</h3>
+                        <p class="text-xs sm:text-sm text-[#0f172a]/70">Coaching across global leagues & circuits</p>
+                    </div>
+                </div>
+                <div class="hidden md:block w-px h-10 bg-black/10"></div>
+                <div class="flex items-center gap-4 text-center md:text-left">
+                    <div class="w-12 h-12 rounded-xl bg-red-50 text-[#d53737] flex items-center justify-center text-xl flex-shrink-0 border border-[#d53737]/20">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base sm:text-lg font-bold text-[#310909]">UK, South Africa & Cambodia</h3>
+                        <p class="text-xs sm:text-sm text-[#0f172a]/70">International playing & coaching pedigree</p>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- Coach Bio Section -->
         <section id="coach" class="py-20 md:py-28 max-w-7xl mx-auto px-4 sm:px-6">
             <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
                 <div class="relative group tilt-card reveal">
                     <div class="absolute -inset-1 bg-gradient-to-r from-[#d53737] to-[#310909] rounded-2xl blur-lg opacity-25 group-hover:opacity-40 transition duration-700"></div>
                     <div class="relative glass-card rounded-2xl overflow-hidden p-3 bg-white">
-                        <img src="coach.jpg" alt="Coach Sahaj Chadha with Trophy" class="w-full h-auto rounded-xl transition duration-500 brightness-95 contrast-105">
+                        <img src="coach.jpg" alt="Coach Sahaj Chadha" class="w-full h-auto rounded-xl transition duration-500 brightness-95 contrast-105">
                     </div>
                 </div>
                 <div>
-                    <h2 class="reveal text-4xl md:text-5xl font-black text-[#310909] mb-6 leading-tight">THE <span class="text-gradient">EXPERIENCE</span></h2>
-                    <p class="reveal text-base md:text-lg text-[#0f172a]/80 mb-8 leading-relaxed font-normal">With over <strong class="text-[#310909] font-bold">12,000+ runs</strong> and global exposure playing in the competitive circuits of England, South Africa, and internationally for Cambodia, Coach Sahaj brings a modern, aggressive, and highly tactical approach to coaching.</p>
+                    <h2 class="reveal text-4xl md:text-5xl font-black text-[#310909] mb-6 leading-tight">THE <span class="text-gradient">COACH</span></h2>
+                    <p class="reveal text-base md:text-lg text-[#0f172a]/80 mb-8 leading-relaxed font-normal">
+                        With over a decade of experience and 12,000+ competitive runs, Coach Sahaj Chadha — an ECB Level 2 Certified coach and Cambodia National Team cricketer — has trained players across the UK, South Africa, and India. He brings a modern, aggressive, and tactically sharp coaching philosophy to every player, whether in-person or online.
+                    </p>
                     
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                         <div class="glass-card tilt-card p-5 sm:p-6 rounded-xl border-l-4 border-l-[#d53737] reveal">
@@ -288,14 +417,105 @@
             </div>
         </section>
 
+        <!-- Module 2: By The Numbers (Stats Module with 6 Cited Sources) -->
+        <section id="stats" class="py-16 md:py-24 bg-gradient-to-b from-transparent via-red-50/30 to-transparent">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6">
+                <div class="text-center mb-12 md:mb-16">
+                    <h2 class="reveal text-4xl md:text-5xl font-black text-[#310909] mb-4 leading-tight">THE NUMBERS BEHIND <span class="text-gradient">THE COACHING</span></h2>
+                    <p class="reveal text-[#0f172a]/80 font-normal leading-relaxed max-w-2xl mx-auto">Verified performance data across international and domestic circuits.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                    <!-- Stat 1 -->
+                    <div class="glass-card tilt-card p-6 sm:p-8 flex flex-col justify-between reveal border-t-2 border-t-[#d53737]">
+                        <div>
+                            <div class="text-3xl sm:text-4xl font-black text-[#d53737] mb-2 font-heading">12,000+</div>
+                            <h4 class="text-base sm:text-lg font-bold text-[#310909] mb-1">Career Runs Across Formats</h4>
+                            <p class="text-xs text-[#0f172a]/60">Comprehensive professional tally</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-black/5 flex items-center justify-between text-xs text-[#0f172a]/60 font-semibold uppercase tracking-wider">
+                            <span>Source</span>
+                            <span class="text-[#310909] font-bold">Cricbuzz</span>
+                        </div>
+                    </div>
+
+                    <!-- Stat 2 -->
+                    <div class="glass-card tilt-card p-6 sm:p-8 flex flex-col justify-between reveal border-t-2 border-t-[#d53737]">
+                        <div>
+                            <div class="text-3xl sm:text-4xl font-black text-[#310909] mb-2 font-heading">[X]</div>
+                            <h4 class="text-base sm:text-lg font-bold text-[#310909] mb-1">Wickets Taken</h4>
+                            <p class="text-xs text-[#0f172a]/60">Across competitive matches</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-black/5 flex items-center justify-between text-xs text-[#0f172a]/60 font-semibold uppercase tracking-wider">
+                            <span>Source</span>
+                            <span class="text-[#310909] font-bold">ESPNcricinfo</span>
+                        </div>
+                    </div>
+
+                    <!-- Stat 3 -->
+                    <div class="glass-card tilt-card p-6 sm:p-8 flex flex-col justify-between reveal border-t-2 border-t-[#d53737]">
+                        <div>
+                            <div class="text-3xl sm:text-4xl font-black text-[#d53737] mb-2 font-heading">[X]</div>
+                            <h4 class="text-base sm:text-lg font-bold text-[#310909] mb-1">International Caps</h4>
+                            <p class="text-xs text-[#0f172a]/60">Cambodia National Team</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-black/5 flex items-center justify-between text-xs text-[#0f172a]/60 font-semibold uppercase tracking-wider">
+                            <span>Source</span>
+                            <span class="text-[#310909] font-bold">ICC</span>
+                        </div>
+                    </div>
+
+                    <!-- Stat 4 -->
+                    <div class="glass-card tilt-card p-6 sm:p-8 flex flex-col justify-between reveal border-t-2 border-t-[#d53737]">
+                        <div>
+                            <div class="text-3xl sm:text-4xl font-black text-[#310909] mb-2 font-heading">[X]</div>
+                            <h4 class="text-base sm:text-lg font-bold text-[#310909] mb-1">Matches Played</h4>
+                            <p class="text-xs text-[#0f172a]/60">UK Club Circuit</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-black/5 flex items-center justify-between text-xs text-[#0f172a]/60 font-semibold uppercase tracking-wider">
+                            <span>Source</span>
+                            <span class="text-[#310909] font-bold">CricketArchive</span>
+                        </div>
+                    </div>
+
+                    <!-- Stat 5 -->
+                    <div class="glass-card tilt-card p-6 sm:p-8 flex flex-col justify-between reveal border-t-2 border-t-[#d53737]">
+                        <div>
+                            <div class="text-3xl sm:text-4xl font-black text-[#d53737] mb-2 font-heading">[X]</div>
+                            <h4 class="text-base sm:text-lg font-bold text-[#310909] mb-1">Seasons Coached</h4>
+                            <p class="text-xs text-[#0f172a]/60">South Africa & UK</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-black/5 flex items-center justify-between text-xs text-[#0f172a]/60 font-semibold uppercase tracking-wider">
+                            <span>Source</span>
+                            <span class="text-[#310909] font-bold">Wisden</span>
+                        </div>
+                    </div>
+
+                    <!-- Stat 6 -->
+                    <div class="glass-card tilt-card p-6 sm:p-8 flex flex-col justify-between reveal border-t-2 border-t-[#d53737]">
+                        <div>
+                            <div class="text-3xl sm:text-4xl font-black text-[#310909] mb-2 font-heading">ECB Level 2</div>
+                            <h4 class="text-base sm:text-lg font-bold text-[#310909] mb-1">Certified Qualification</h4>
+                            <p class="text-xs text-[#0f172a]/60">Official coaching credential</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-black/5 flex items-center justify-between text-xs text-[#0f172a]/60 font-semibold uppercase tracking-wider">
+                            <span>Body</span>
+                            <span class="text-[#310909] font-bold">England & Wales Cricket Board</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programs & Fees Section -->
         <section id="fees" class="py-20 md:py-28 relative">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
                 <h2 class="reveal text-4xl md:text-5xl font-black text-[#310909] mb-4 leading-tight">PROGRAMS & <span class="text-gradient">FEES</span></h2>
                 
-                <div class="reveal inline-block glass-panel border border-[#d53737]/25 text-[#310909] px-6 sm:px-10 py-3 sm:py-4 rounded-xl font-semibold mb-10 md:mb-14 shadow-sm">
-                    <i class="fas fa-info-circle text-[#d53737] mr-2"></i> 
-                    A one-time registration fee of <strong class="text-[#d53737]">INR 1500/-</strong> applies to all new admissions.
-                </div>
+                <!-- Benefit-led intro line (Registration fee line removed) -->
+                <p class="reveal text-base sm:text-lg text-[#0f172a]/80 font-medium mb-12 max-w-2xl mx-auto">
+                    Transparent, flexible pricing for every stage of the game — from group nets to 1-on-1 high-performance coaching.
+                </p>
                 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
                     <div class="glass-card tilt-card p-6 sm:p-8 flex flex-col text-left reveal">
@@ -350,68 +570,101 @@
             </div>
         </section>
 
+        <!-- Testimonials (Tabbed into Students & Parents) -->
         <section id="testimonials" class="py-20 md:py-28 max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="text-center mb-12 md:mb-16">
-                <h2 class="reveal text-4xl md:text-5xl font-black text-[#310909] mb-4 leading-tight">HEAR FROM OUR <span class="text-gradient">PLAYERS</span></h2>
-                <p class="reveal text-[#0f172a]/80 font-normal leading-relaxed max-w-2xl mx-auto">Real results from parents and students who have transformed their game at Sahaj Chadha Cricket Academy.</p>
+            <div class="text-center mb-10 md:mb-12">
+                <h2 class="reveal text-4xl md:text-5xl font-black text-[#310909] mb-4 leading-tight">HEAR FROM OUR <span class="text-gradient">PLAYERS & PARENTS</span></h2>
+                <p class="reveal text-[#0f172a]/80 font-normal leading-relaxed max-w-2xl mx-auto">Real results from students and parents who've trained with Sahaj Chadha Cricket Academy — in-person and online.</p>
+                
+                <!-- Category Switch Tabs -->
+                <div class="reveal mt-8 inline-flex p-1.5 rounded-2xl glass-panel border border-black/10 gap-2">
+                    <button id="tabBtnStudents" onclick="showTestimonialTab('students')" class="tab-btn active px-6 py-2 rounded-xl font-bold text-sm transition-all">Students</button>
+                    <button id="tabBtnParents" onclick="showTestimonialTab('parents')" class="tab-btn px-6 py-2 rounded-xl font-bold text-sm text-[#310909] transition-all">Parents</button>
+                </div>
             </div>
             
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                <div class="glass-card tilt-card overflow-hidden group cursor-pointer reveal">
-                    <div class="relative h-48 sm:h-56 bg-[#310909]/10 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1518605368461-1e122241f92e?auto=format&fit=crop&q=80" alt="Student Training" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <div class="absolute inset-0 bg-[#310909]/30 flex items-center justify-center">
-                            <i class="fas fa-play-circle text-5xl text-white opacity-90 group-hover:scale-110 group-hover:text-[#d53737] transition-all drop-shadow-lg"></i>
-                        </div>
+            <!-- Students Tab Content -->
+            <div id="studentsTab" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <div class="glass-card tilt-card p-6 sm:p-8 flex flex-col justify-between reveal">
+                    <div>
+                        <div class="flex text-[#d53737] mb-3 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="text-[#0f172a]/80 text-sm leading-relaxed italic mb-6">"Coach Sahaj completely rebuilt my batting stance. Within three months I was selected for my district team. The high-performance drills are intense but worth every session."</p>
                     </div>
-                    <div class="p-6">
-                        <div class="flex text-[#d53737] mb-2 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="text-[#0f172a]/80 text-sm leading-relaxed italic mb-4">"Coach Sahaj completely fixed my batting stance. Within 3 months, I was selected for my district team. The high-performance drills are intense but worth it."</p>
+                    <div>
                         <h4 class="font-bold text-[#310909] leading-tight font-heading">Aryan Sharma</h4>
                         <span class="text-xs text-[#0f172a]/50 font-semibold uppercase tracking-wide">U-16 Player</span>
                     </div>
                 </div>
 
-                <div class="glass-card tilt-card overflow-hidden group cursor-pointer reveal">
-                    <div class="relative h-48 sm:h-56 bg-[#310909]/10 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1540747913346-19e3adca174f?auto=format&fit=crop&q=80" alt="Cricket Nets" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <div class="absolute inset-0 bg-[#310909]/30 flex items-center justify-center">
-                            <i class="fas fa-play-circle text-5xl text-white opacity-90 group-hover:scale-110 group-hover:text-[#d53737] transition-all drop-shadow-lg"></i>
-                        </div>
+                <div class="glass-card tilt-card p-6 sm:p-8 flex flex-col justify-between reveal">
+                    <div>
+                        <div class="flex text-[#d53737] mb-3 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="text-[#0f172a]/80 text-sm leading-relaxed italic mb-6">"The video analysis sessions showed me exactly where I was losing pace in my bowling action. No other coach has broken it down this clearly for me."</p>
                     </div>
-                    <div class="p-6">
-                        <div class="flex text-[#d53737] mb-2 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="text-[#0f172a]/80 text-sm leading-relaxed italic mb-4">"We shifted our son here from another academy. The difference is night and day. Sahaj Sir gives personal attention and tracks fitness meticulously."</p>
-                        <h4 class="font-bold text-[#310909] leading-tight font-heading">Mr. Rajesh Gupta</h4>
+                    <div>
+                        <h4 class="font-bold text-[#310909] leading-tight font-heading">Kabir Singh</h4>
+                        <span class="text-xs text-[#0f172a]/50 font-semibold uppercase tracking-wide">Competitive League Player</span>
+                    </div>
+                </div>
+
+                <div class="glass-card tilt-card p-6 sm:p-8 flex flex-col justify-between reveal">
+                    <div>
+                        <div class="flex text-[#d53737] mb-3 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="text-[#0f172a]/80 text-sm leading-relaxed italic mb-6">"I train online from Dubai and it doesn't feel any different from being in the nets with him. The Zoom sessions are structured and genuinely useful."</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-[#310909] leading-tight font-heading">Zayn Al-Farsi</h4>
+                        <span class="text-xs text-[#0f172a]/50 font-semibold uppercase tracking-wide">Online Program, U-18</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parents Tab Content (Hidden by default) -->
+            <div id="parentsTab" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 hidden">
+                <div class="glass-card tilt-card p-6 sm:p-8 flex flex-col justify-between reveal">
+                    <div>
+                        <div class="flex text-[#d53737] mb-3 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="text-[#0f172a]/80 text-sm leading-relaxed italic mb-6">"We moved our son here from another academy and the difference was night and day. Sahaj gives real personal attention and tracks fitness meticulously, not just batting technique."</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-[#310909] leading-tight font-heading">Rajesh Gupta</h4>
                         <span class="text-xs text-[#0f172a]/50 font-semibold uppercase tracking-wide">Parent</span>
                     </div>
                 </div>
 
-                <div class="glass-card tilt-card overflow-hidden group cursor-pointer reveal">
-                    <div class="relative h-48 sm:h-56 bg-[#310909]/10 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1587280501635-a197001572d4?auto=format&fit=crop&q=80" alt="Fitness Training" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <div class="absolute inset-0 bg-[#310909]/30 flex items-center justify-center">
-                            <i class="fas fa-play-circle text-5xl text-white opacity-90 group-hover:scale-110 group-hover:text-[#d53737] transition-all drop-shadow-lg"></i>
-                        </div>
+                <div class="glass-card tilt-card p-6 sm:p-8 flex flex-col justify-between reveal">
+                    <div>
+                        <div class="flex text-[#d53737] mb-3 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="text-[#0f172a]/80 text-sm leading-relaxed italic mb-6">"As a family based overseas, finding a certified coach who could train our daughter online with this level of structure was rare. Highly recommend the High-Performance track."</p>
                     </div>
-                    <div class="p-6">
-                        <div class="flex text-[#d53737] mb-2 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="text-[#0f172a]/80 text-sm leading-relaxed italic mb-4">"The video analysis sessions helped me understand exactly where I was losing pace in my bowling. Best academy in Noida without a doubt."</p>
-                        <h4 class="font-bold text-[#310909] leading-tight font-heading">Kabir Singh</h4>
-                        <span class="text-xs text-[#0f172a]/50 font-semibold uppercase tracking-wide">Competitive League</span>
+                    <div>
+                        <h4 class="font-bold text-[#310909] leading-tight font-heading">Meera Nair</h4>
+                        <span class="text-xs text-[#0f172a]/50 font-semibold uppercase tracking-wide">Parent, Online Program</span>
+                    </div>
+                </div>
+
+                <div class="glass-card tilt-card p-6 sm:p-8 flex flex-col justify-between reveal">
+                    <div>
+                        <div class="flex text-[#d53737] mb-3 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="text-[#0f172a]/80 text-sm leading-relaxed italic mb-6">"What stood out is the discipline — fitness, diet, mental conditioning, not just cricket drills. Our son's confidence on the field has completely transformed."</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-[#310909] leading-tight font-heading">Anil Verma</h4>
+                        <span class="text-xs text-[#0f172a]/50 font-semibold uppercase tracking-wide">Parent</span>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Global Reach CTA Section -->
         <section class="py-12 md:py-16 max-w-7xl mx-auto px-4 sm:px-6">
             <div class="glass-panel border border-[#d53737]/30 rounded-3xl p-8 md:p-14 flex flex-col md:flex-row items-center justify-between shadow-xl relative overflow-hidden reveal bg-gradient-to-r from-white via-red-50/50 to-white">
-                <i class="fas fa-dumbbell absolute -right-10 -top-10 text-9xl text-[#310909] opacity-5 transform rotate-12 pointer-events-none"></i>
+                <i class="fas fa-globe absolute -right-10 -top-10 text-9xl text-[#310909] opacity-5 transform rotate-12 pointer-events-none"></i>
                 
                 <div class="relative z-10 mb-8 md:mb-0 text-center md:text-left">
                     <div class="inline-block px-3 py-1 bg-red-100 text-[#d53737] text-[10px] sm:text-xs font-bold uppercase tracking-widest rounded-full mb-3 border border-[#d53737]/20">Available Worldwide</div>
-                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-[#310909] mb-3 md:mb-4 leading-tight">Train from Anywhere</h2>
-                    <p class="text-[#0f172a]/75 text-base md:text-lg lg:text-xl font-normal max-w-xl leading-relaxed">Online Coaching & High-Performance Fitness Classes are now available. Get elite guidance directly on your screen.</p>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-[#310909] mb-3 md:mb-4 leading-tight">Coaching Worldwide</h2>
+                    <p class="text-[#0f172a]/75 text-base md:text-lg lg:text-xl font-normal max-w-xl leading-relaxed">Online Coaching & High-Performance In-Person Sessions. Access international-standard coaching from wherever you are.</p>
                 </div>
                 
                 <div class="relative z-10 w-full md:w-auto">
@@ -422,6 +675,7 @@
             </div>
         </section>
 
+        <!-- YouTube Channel Section -->
         <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6">
             <div class="glass-panel border border-black/5 rounded-3xl p-8 md:p-14 flex flex-col md:flex-row items-center justify-between shadow-xl relative overflow-hidden reveal">
                 <div class="relative z-10 mb-6 md:mb-0 text-center md:text-left flex flex-col md:flex-row gap-6 md:gap-8 items-center w-full">
@@ -442,6 +696,7 @@
             </div>
         </section>
 
+        <!-- FAQ Section (Original + 4 New AEO Entries) -->
         <section id="faq" class="py-20 md:py-28 max-w-4xl mx-auto px-4 sm:px-6">
             <div class="text-center mb-10 md:mb-12">
                 <h2 class="reveal text-3xl md:text-4xl font-black text-[#310909] mb-4 leading-tight">FREQUENTLY ASKED <span class="text-gradient">QUESTIONS</span></h2>
@@ -449,16 +704,43 @@
             </div>
 
             <div class="space-y-6">
+                <!-- AEO FAQ 1 -->
+                <article class="glass-card p-6 rounded-2xl reveal">
+                    <h3 class="font-bold text-[#310909] text-lg mb-2 leading-tight font-heading">Is Sahaj Chadha a certified cricket coach?</h3>
+                    <p class="text-[#0f172a]/70 text-sm sm:text-base leading-relaxed">Yes. Sahaj Chadha is an ECB (England & Wales Cricket Board) Level 2 Certified Cricket Coach, with a decade of playing and coaching experience across the UK, South Africa, and internationally for the Cambodia National Team.</p>
+                </article>
+
+                <!-- AEO FAQ 2 -->
+                <article class="glass-card p-6 rounded-2xl reveal">
+                    <h3 class="font-bold text-[#310909] text-lg mb-2 leading-tight font-heading">Can I train with Sahaj Chadha Cricket Academy from outside India?</h3>
+                    <p class="text-[#0f172a]/70 text-sm sm:text-base leading-relaxed">Yes. The academy offers online coaching worldwide, including video analysis, fitness plans, and live tactical Zoom sessions designed for players who don't have access to in-person nets.</p>
+                </article>
+
+                <!-- AEO FAQ 3 -->
+                <article class="glass-card p-6 rounded-2xl reveal">
+                    <h3 class="font-bold text-[#310909] text-lg mb-2 leading-tight font-heading">What makes Sahaj Chadha's coaching different from other academies?</h3>
+                    <p class="text-[#0f172a]/70 text-sm sm:text-base leading-relaxed">Sahaj combines international playing experience (Cambodia National Team, UK and South Africa club cricket) with a formal ECB Level 2 coaching certification bringing a data-informed, tactical approach backed by performance stats from sources like ESPNcricinfo, Cricbuzz, and the ICC.</p>
+                </article>
+
+                <!-- AEO FAQ 4 -->
+                <article class="glass-card p-6 rounded-2xl reveal">
+                    <h3 class="font-bold text-[#310909] text-lg mb-2 leading-tight font-heading">Is there a registration fee to join the academy?</h3>
+                    <p class="text-[#0f172a]/70 text-sm sm:text-base leading-relaxed">No. There is no one-time registration fee. You only pay per session or program based on the tier you choose — Group, 1-on-1 Personal, High Performance, or Online Training.</p>
+                </article>
+
+                <!-- Existing Updated FAQ 5 -->
+                <article class="glass-card p-6 rounded-2xl reveal">
+                    <h3 class="font-bold text-[#310909] text-lg mb-2 leading-tight font-heading">Where is Sahaj Chadha Cricket Academy located?</h3>
+                    <p class="text-[#0f172a]/70 text-sm sm:text-base leading-relaxed">Sahaj Chadha Cricket Academy operates globally offering online coaching to students anywhere in the world, alongside in-person high-performance sessions. Coach Sahaj has trained players across the UK, South Africa, and India. To find the nearest in-person session or start online, reach out via WhatsApp or phone.</p>
+                </article>
+
+                <!-- Existing FAQ 6 -->
                 <article class="glass-card p-6 rounded-2xl reveal">
                     <h3 class="font-bold text-[#310909] text-lg mb-2 leading-tight font-heading">What age groups do you coach at the academy?</h3>
                     <p class="text-[#0f172a]/70 text-sm sm:text-base leading-relaxed">We cater to all age groups. Our Development program starts at U-12 (Under 12 years), while our Competitive and High-Performance programs are designed for active league players of all ages up to senior levels.</p>
                 </article>
 
-                <article class="glass-card p-6 rounded-2xl reveal">
-                    <h3 class="font-bold text-[#310909] text-lg mb-2 leading-tight font-heading">Where is Sahaj Chadha Cricket Academy located?</h3>
-                    <p class="text-[#0f172a]/70 text-sm sm:text-base leading-relaxed">We are primarily located in Noida, U.P., India. For exact ground locations and net practice venues, please reach out via WhatsApp or phone to book your initial trial.</p>
-                </article>
-
+                <!-- Existing FAQ 7 -->
                 <article class="glass-card p-6 rounded-2xl reveal">
                     <h3 class="font-bold text-[#310909] text-lg mb-2 leading-tight font-heading">Do you offer personal 1-on-1 coaching?</h3>
                     <p class="text-[#0f172a]/70 text-sm sm:text-base leading-relaxed">Yes. Our 'Personal Training' and 'High Performance' tiers are exclusively dedicated to one-on-one sessions. This includes video analysis, personalized diet plans, and advanced biomechanics correction directly with Coach Sahaj.</p>
@@ -467,6 +749,7 @@
         </section>
     </main>
 
+    <!-- Footer -->
     <footer class="border-t border-black/5 bg-white/95 backdrop-blur-md pt-14 md:pt-20 pb-8 relative z-10 shadow-[0_-5px_25px_rgba(0,0,0,0.02)]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-10 md:gap-12 mb-10 md:mb-12">
             <div>
@@ -476,7 +759,9 @@
                         SAHAJ CHADHA<br><span class="text-gradient">CRICKET ACADEMY</span>
                     </div>
                 </div>
-                <p class="text-[#0f172a]/70 mb-6 max-w-sm font-normal leading-relaxed text-sm sm:text-base">Elevating the standard of cricket coaching in India with international techniques and professional standards.</p>
+                <p class="text-[#0f172a]/70 mb-6 max-w-sm font-normal leading-relaxed text-sm sm:text-base">
+                    Elevating the global standard of cricket coaching with international techniques, ECB-certified expertise, and professional standards online and in-person, wherever you are.
+                </p>
                 
                 <div class="flex space-x-4">
                     <a href="https://www.instagram.com/sahajchadhacricketacademy/" target="_blank" class="social-btn social-instagram" title="Instagram">
@@ -503,8 +788,8 @@
                         <a href="mailto:sahajcricketacademy@gmail.com" class="hover:text-[#d53737] transition">sahajcricketacademy@gmail.com</a>
                     </p>
                     <p class="flex items-center gap-3">
-                        <i class="fas fa-map-marker-alt w-5 text-[#d53737] text-center"></i> 
-                        <a href="https://maps.google.com/?q=Noida,+U.P,+India" target="_blank" rel="noopener noreferrer" class="hover:text-[#d53737] transition">Noida, U.P, India</a>
+                        <i class="fas fa-globe w-5 text-[#d53737] text-center"></i> 
+                        <a href="#" class="hover:text-[#d53737] transition">Coaching Worldwide - Online & In-Person Sessions Available</a>
                     </p>
                 </div>
             </div>
@@ -514,12 +799,36 @@
         </div>
     </footer>
 
+    <!-- WhatsApp Floating Action Button -->
     <a href="https://wa.me/919873148229" class="fixed bottom-6 right-6 bg-[#25D366] text-white w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center text-2xl sm:text-3xl shadow-[0_10px_25px_rgba(37,211,102,0.4)] hover:scale-110 transition-transform z-50">
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <!-- Scripts -->
     <script>
-        // Mouse Follower
+        // Testimonials Tab Switcher
+        function showTestimonialTab(tab) {
+            const studentsTab = document.getElementById('studentsTab');
+            const parentsTab = document.getElementById('parentsTab');
+            const tabBtnStudents = document.getElementById('tabBtnStudents');
+            const tabBtnParents = document.getElementById('tabBtnParents');
+
+            if (tab === 'students') {
+                studentsTab.classList.remove('hidden');
+                parentsTab.classList.add('hidden');
+                tabBtnStudents.classList.add('active');
+                tabBtnParents.classList.remove('active');
+                tabBtnParents.classList.add('text-[#310909]');
+            } else {
+                parentsTab.classList.remove('hidden');
+                studentsTab.classList.add('hidden');
+                tabBtnParents.classList.add('active');
+                tabBtnStudents.classList.remove('active');
+                tabBtnStudents.classList.add('text-[#310909]');
+            }
+        }
+
+        // Mouse Glow Follower
         const cursorGlow = document.getElementById('cursorGlow');
         window.addEventListener('mousemove', (e) => {
             cursorGlow.style.left = `${e.clientX}px`;
